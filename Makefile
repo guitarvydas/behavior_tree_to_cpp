@@ -1,3 +1,4 @@
 all:
 	clear
-	./diagram-to-factbase.bash '..' 'tree.drawio'
+	./diagram-to-factbase.bash '..' 'tree.drawio' >fb.pl
+

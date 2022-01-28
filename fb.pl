@@ -131,7 +131,7 @@ diagram_fact(jettySize, cell_6, "auto").
 diagram_fact(jettySize, cell_7, "auto").
 diagram_fact(jettySize, cell_8, "auto").
 diagram_fact(mxGraphModel, mxGraphModel_2, mxGraphModel_2).
-diagram_fact(name, diagram_1, "Page-1").
+diagram_fact(name, diagram_1, "tree").
 diagram_fact(orthogonalLoop, cell_10, 1).
 diagram_fact(orthogonalLoop, cell_12, 1).
 diagram_fact(orthogonalLoop, cell_13, 1).
@@ -209,7 +209,7 @@ diagram_fact(value, cell_17, "D").
 diagram_fact(value, cell_18, "E").
 diagram_fact(value, cell_19, "F").
 diagram_fact(value, cell_20, "G").
-diagram_fact(value, cell_9, "A").
+diagram_fact(value, cell_9, "Z").
 diagram_fact(vertex, cell_11, 1).
 diagram_fact(vertex, cell_15, 1).
 diagram_fact(vertex, cell_16, 1).
