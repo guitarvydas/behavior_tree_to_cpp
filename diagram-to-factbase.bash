@@ -1,4 +1,3 @@
-set -x
 #usage ./diagram-to-factbase.bash 3<xxx 4<yyy
 #
 # where xxx is a string - the directory path to the root of all tools
@@ -8,17 +7,15 @@ set -x
 
 ductA=ductA_$RANDOM
 ductB=ductB_$RANDOM
-ductC=ductC_$RANDOM
-mkfifo $ductA $ductB $ductC
+mkfifo $ductA $ductB
 
 root=$1
 target=$2
 
 # for d2f 
-$root/components/d2f.comp 3<$ductA 4<$ductB 5>$ductC &
+$root/components/d2f.comp 3<$ductA 4<$ductB 5>&1 &
+pid=$!
 echo $root >$ductA &
 echo $target >$ductB &
-cat <$ductC >d2f.fb.pl
-cat d2f.fb.pl
-
-rm -rf $ductA $ductB $ductC
+wait $pid
+rm -rf $ductA $ductB
