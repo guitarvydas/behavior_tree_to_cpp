@@ -1,0 +1,4 @@
+[
+    {"relation":"father", "subject":"john", "object":"george"},
+    {"relation":"father", "subject":"paul", "object":"ringo"}
+]
