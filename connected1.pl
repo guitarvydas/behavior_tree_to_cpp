@@ -6,14 +6,16 @@ connected:-
     consult(user),
     bagof([X,Y],connected1(X,Y),Bag),
     current_output(Out),
-    connected_write(Out, Bag),
+    connected_format(Out, Bag, S),
+    write(S),
     %json_write(Out, Bag, [width(128)]),
     halt.
 
-connected_write(_, []).
-connected_write(Out, [[H1,H2]|T]):-
-    format("treefact(connected, ~w, ~w).~n",[H1,H2]),
-    connected_write(Out,T).
+connected_format(_, [], "").
+connected_format(Out, [[H1,H2]|T], S):-
+    format(string(S1),"treefact(connected, ~w, ~w).~n",[H1,H2]),
+    connected_format(Out,T,S2),
+    string_concat(S1,S2,S).
 
 connected1(Node1,Node2):-
     name(Node1,N1),
