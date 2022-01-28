@@ -1,0 +1,2 @@
+all:
+	./diagram-to-factbase.bash 3<`realpath ..` 4<`echo tree.drawio`

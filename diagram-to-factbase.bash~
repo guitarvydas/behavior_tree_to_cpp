@@ -1,0 +1,16 @@
+clear
+echo dev.bash
+ductA=ductA_$RANDOM
+ductB=ductB_$RANDOM
+ductC=ductC_$RANDOM
+ductD=ductD_$RANDOM
+ductE=ductE_$RANDOM
+mkfifo $ductA $ductB $ductC $ductD $ductE
+root=`realpath ../`
+
+# for d2f 
+$root/d2py/d2f.comp 3<$ductA 4<$ductB 5>$ductC &
+echo $root >$ductA &
+echo tree.drawio >$ductB &
+cat <$ductC >d2f.fb.pl
+cat d2f.fb.pl
