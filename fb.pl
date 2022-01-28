@@ -175,12 +175,12 @@ diagram_fact(target, cell_6, bmLo2S3h3X6idPI3VYxt__8).
 diagram_fact(target, cell_7, bmLo2S3h3X6idPI3VYxt__9).
 diagram_fact(target, cell_8, bmLo2S3h3X6idPI3VYxt__10).
 diagram_fact(value, cell_10, "Open Fridge").
-diagram_fact(value, cell_13, "#Fallback").
+diagram_fact(value, cell_13, "#fallback").
 diagram_fact(value, cell_14, "Close Fridge").
 diagram_fact(value, cell_15, "Grab beer").
 diagram_fact(value, cell_17, "Force Failure").
 diagram_fact(value, cell_18, "Close Fridge").
-diagram_fact(value, cell_9, "#Sequence").
+diagram_fact(value, cell_9, "#sequence").
 diagram_fact(vertex, cell_10, 1).
 diagram_fact(vertex, cell_13, 1).
 diagram_fact(vertex, cell_14, 1).
