@@ -84,7 +84,7 @@ diagram_fact(fillColor, cell_11, "#e1d5e7").
 diagram_fact(fillColor, cell_12, "#f8cecc").
 diagram_fact(fillColor, cell_13, "#f8cecc").
 diagram_fact(fillColor, cell_14, "#f8cecc").
-diagram_fact(fillColor, cell_15, "#f8cecc").
+diagram_fact(fillColor, cell_15, "#dae8fc").
 diagram_fact(fillColor, cell_16, "#f8cecc").
 diagram_fact(fillColor, cell_17, "#f5f5f5").
 diagram_fact(fillColor, cell_18, "#f5f5f5").
@@ -178,7 +178,7 @@ diagram_fact(strokeColor, cell_11, "#9673a6").
 diagram_fact(strokeColor, cell_12, "#b85450").
 diagram_fact(strokeColor, cell_13, "#b85450").
 diagram_fact(strokeColor, cell_14, "#b85450").
-diagram_fact(strokeColor, cell_15, "#b85450").
+diagram_fact(strokeColor, cell_15, "#6c8ebf").
 diagram_fact(strokeColor, cell_16, "#b85450").
 diagram_fact(strokeColor, cell_17, "#666666").
 diagram_fact(strokeColor, cell_18, "#666666").
