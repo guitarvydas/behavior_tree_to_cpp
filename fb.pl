@@ -84,7 +84,7 @@ diagram_fact(fillColor, cell_11, "#e1d5e7").
 diagram_fact(fillColor, cell_12, "#f8cecc").
 diagram_fact(fillColor, cell_13, "#f8cecc").
 diagram_fact(fillColor, cell_14, "#f8cecc").
-diagram_fact(fillColor, cell_15, "#dae8fc").
+diagram_fact(fillColor, cell_15, "#f8cecc").
 diagram_fact(fillColor, cell_16, "#f8cecc").
 diagram_fact(fillColor, cell_17, "#f5f5f5").
 diagram_fact(fillColor, cell_18, "#f5f5f5").
@@ -178,7 +178,7 @@ diagram_fact(strokeColor, cell_11, "#9673a6").
 diagram_fact(strokeColor, cell_12, "#b85450").
 diagram_fact(strokeColor, cell_13, "#b85450").
 diagram_fact(strokeColor, cell_14, "#b85450").
-diagram_fact(strokeColor, cell_15, "#6c8ebf").
+diagram_fact(strokeColor, cell_15, "#b85450").
 diagram_fact(strokeColor, cell_16, "#b85450").
 diagram_fact(strokeColor, cell_17, "#666666").
 diagram_fact(strokeColor, cell_18, "#666666").
@@ -285,3 +285,30 @@ diagram_fact(y, cell_18, 240).
 diagram_fact(y, cell_19, 240).
 diagram_fact(y, cell_20, 240).
 diagram_fact(y, cell_21, 235).
+treefact(connected, cell_11, cell_12).
+treefact(connected, cell_11, cell_13).
+treefact(connected, cell_11, cell_14).
+treefact(connected, cell_11, cell_15).
+treefact(connected, cell_11, cell_16).
+treefact(kind, cell_11, sequence).
+treefact(kind, cell_12, syncnode).
+treefact(kind, cell_13, syncnode).
+treefact(kind, cell_14, syncnode).
+treefact(kind, cell_15, syncnode).
+treefact(kind, cell_16, syncnode).
+treefact(kind, cell_17, textbox).
+treefact(kind, cell_18, textbox).
+treefact(kind, cell_19, textbox).
+treefact(kind, cell_20, textbox).
+treefact(kind, cell_21, textbox).
+treefact(name, cell_11, "#sequence").
+treefact(name, cell_12, "SaySomething").
+treefact(name, cell_13, "SaySomething2").
+treefact(name, cell_14, "SaySomething2").
+treefact(name, cell_15, "ThinkWhatToSay").
+treefact(name, cell_16, "SaySomething").
+treefact(text, cell_17, "message = &quot;SaySomething2 works too&quot;").
+treefact(text, cell_18, "text=&quot;{the_answer}&quot;").
+treefact(text, cell_19, "message=&quot;{the_answer}&quot;").
+treefact(text, cell_20, "message=&quot;{the_answer}&quot;").
+treefact(text, cell_21, "message = &quot;Start thinking...&quot;").

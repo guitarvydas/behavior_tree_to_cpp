@@ -33,7 +33,6 @@ kind(Node, syncnode):-rectangle(Node),textOther(Node),red(Node).
 kind(Node, textbox):-rectangle(Node),textOther(Node),gray(Node).
 kind(Node, asyncnode):-rectangle(Node),textOther(Node),colorOther(Node).
 
-rectangle(Node):-diagram_fact(rectangle,Node,_).
 textSequence(Node):-name(Node,"#sequence").
 textFallback(Node):-name(Node,"#fallback").
 textOther(Node):- \+ textSequence(Node), \+ textFallback(Node).

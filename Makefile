@@ -1,6 +1,9 @@
 all:
 	clear
 	./diagram-to-factbase.bash '..' 'tree.drawio' >fb.pl
-	./connected1.pl <fb.pl 2>/dev/null
-	./kind.pl <fb.pl 2>/dev/null
+	./connected1.pl <fb.pl >>fb.pl
+	./kind.pl <fb.pl >>fb.pl 
+	./name.pl <fb.pl >>fb.pl
+	./text.pl <fb.pl >>fb.pl
+	grep 'treefact' fb.pl
 
