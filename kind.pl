@@ -19,19 +19,21 @@ kind_format(Out, [[H1,H2]|T], S):-
     string_concat(S1,S2,S).
 
 %% node {
-%% shape     text      color
-%% rectangle #sequence       -> sequence
-%% rectangle #fallback       -> fallback
-%% rectangle           red   -> syncnode
-%% rectangle           gray  -> textbox
-%% else                      -> asyncnode
+%% shape     connected text      color
+%% _         no        _         _     -> comment
+%% rectangle yes       #sequence       -> sequence
+%% rectangle yes       #fallback       -> fallback
+%% rectangle yes                 red   -> syncnode
+%% rectangle yes                 gray  -> textbox
+%% else      yes                       -> asyncnode
 %% }
 
+kind(Node, comment) :- vertex(Node), textOther(Node), colorOther(Node), \+ connected(Node).
 kind(Node, sequence):-rectangle(Node),textSequence(Node).
 kind(Node, fallback):-rectangle(Node),textFallback(Node).
 kind(Node, syncnode):-rectangle(Node),textOther(Node),red(Node).
 kind(Node, textbox):-rectangle(Node),textOther(Node),gray(Node).
-kind(Node, asyncnode):-rectangle(Node),textOther(Node),colorOther(Node).
+kind(Node, asyncnode):-rectangle(Node),textOther(Node),colorOther(Node), \+ kind(Node, comment).
 
 textSequence(Node):-name(Node,"#sequence").
 textFallback(Node):-name(Node,"#fallback").
@@ -46,3 +48,6 @@ rectangle(Node):-vertex(Node),\+ edge(Node), \+ ellipse(Node).
 vertex(Node):-diagram_fact(vertex,Node,_).
 
 name(Node, Name):-diagram_fact(value, Node, Name).
+
+connected(Node) :- treefact(connected, Node, _).
+connected(Node) :- treefact(connected, _, Node).

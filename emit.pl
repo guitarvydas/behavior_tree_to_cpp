@@ -19,12 +19,12 @@ children(Node,Children):-
     sequence(Node,ChildrenNodes),
     describe(ChildrenNodes,Children,0).
 
-describe1(Child,ChildDescription,Index):-
+describeNode(Child,ChildDescription,Index):-
     name(Child,Name),
     ChildDescription=desc{node:Child,type:Name,index:Index}.
 
 describe([],[],_).
 describe([Child|MoreChildren],[ChildDescription|MoreDescriptions],Index):-
-    describe1(Child,ChildDescription,Index),
+    describeNode(Child,ChildDescription,Index),
     N is Index + 1,
     describe(MoreChildren,MoreDescriptions,N).

@@ -304,6 +304,7 @@ treefact(connected, cell_11, cell_13).
 treefact(connected, cell_11, cell_14).
 treefact(connected, cell_11, cell_15).
 treefact(connected, cell_11, cell_16).
+treefact(kind, cell_22, comment).
 treefact(kind, cell_11, sequence).
 treefact(kind, cell_12, syncnode).
 treefact(kind, cell_13, syncnode).
@@ -315,14 +316,11 @@ treefact(kind, cell_18, textbox).
 treefact(kind, cell_19, textbox).
 treefact(kind, cell_20, textbox).
 treefact(kind, cell_21, textbox).
-treefact(kind, cell_22, asyncnode).
-treefact(name, cell_11, "#sequence").
 treefact(name, cell_12, "SaySomething").
 treefact(name, cell_13, "SaySomething2").
 treefact(name, cell_14, "SaySomething2").
 treefact(name, cell_15, "ThinkWhatToSay").
 treefact(name, cell_16, "SaySomething").
-treefact(name, cell_22, "&lt;div&gt;&lt;div&gt;&amp;lt;root main_tree_to_execute = &quot;MainTree&quot; &amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;BehaviorTree ID=&quot;MainTree&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;Sequence name=&quot;root_sequence&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;start thinking...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;ThinkWhatToSay&amp;nbsp; &amp;nbsp;text=&quot;{the_answer}&quot;/&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;SaySomething2 works too...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;/Sequence&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;/BehaviorTree&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/root&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;").
 treefact(str, cell_17, "message = &quot;SaySomething2 works too&quot;").
 treefact(str, cell_18, "text=&quot;{the_answer}&quot;").
 treefact(str, cell_19, "message=&quot;{the_answer}&quot;").

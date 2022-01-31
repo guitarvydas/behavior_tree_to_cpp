@@ -18,4 +18,5 @@ name_format(Out, [[H1,H2]|T], S):-
     name_format(Out,T,S2),
     string_concat(S1,S2,S).
 
-name(Node, Name):-diagram_fact(value, Node, Name), \+ treefact(kind, Node, textbox).
+name(Node, Name):-diagram_fact(value, Node, Name), treefact(kind, Node, syncnode).
+name(Node, Name):-diagram_fact(value, Node, Name), treefact(kind, Node, asyncnode).

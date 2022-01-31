@@ -19,3 +19,5 @@ istr_format(Out, [[N|[Str]]|T], S):-
     string_concat(S1,S2,S).
 
 istr(Node,String) :- textbox(Node), diagram_fact(value,Node,String).
+
+
