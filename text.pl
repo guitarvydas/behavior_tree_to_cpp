@@ -4,7 +4,7 @@
 
 alltext:-
     consult(user),
-    bagof([Node,Text],text(Node,Text),Bag),
+    bagof(Node,text(Node),Bag),
     current_output(Out),
     text_format(Out, Bag, S),
     write(S),
@@ -12,8 +12,9 @@ alltext:-
 
     
 text_format(_, [], "").
-text_format(Out, [[H1,H2]|T], S):-
-    format(string(S1),"treefact(textbox, ~w, 0).~ntreefact(str, ~w, ~q).~n",[H1,H1,H2]),
+text_format(Out, [H|T], S):-
+    format(string(S1),"treefact(textbox, ~w, 0).~n",[H]),
     text_format(Out,T,S2),
     string_concat(S1,S2,S).
 
+text(Node) :- diagram_fact(value,Node,_).
