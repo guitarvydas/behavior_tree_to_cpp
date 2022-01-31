@@ -3,7 +3,7 @@ sequence(Node,Children):-
 
 sequencechildren(Node,Children):-
     sequence(Node,ChildrenNodes),
-    describe(ChildrenNodes,Descriptions,0),
+    describe(ChildrenNodes,Descriptions),
     %Children = Descriptions.
     sort(left, @<, Descriptions, Children).
 
@@ -16,8 +16,7 @@ describeNode(Node,Description):-
     boundingbox_top(Node,Top),
     Description=desc{node:Node,type:Name,str:Str,left:Left,top:Top}.
 
-describe([],[],_).
-describe([Child|MoreChildren],[ChildDescription|MoreDescriptions],Index):-
+describe([],[]).
+describe([Child|MoreChildren],[ChildDescription|MoreDescriptions]):-
     describeNode(Child,ChildDescription),
-    N is Index + 1,
-    describe(MoreChildren,MoreDescriptions,N).
+    describe(MoreChildren,MoreDescriptions).
