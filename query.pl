@@ -11,5 +11,5 @@ connected(Node) :- treefact(connected, _, Node).
 str(Node,String) :- textbox(Node), treefact(str, Node, String).
 
 
-contains(Node,Child) :- treefact(directcontains, Node, Child).
+contains(Node,Child) :- treefact(contains, Node, Child).
 

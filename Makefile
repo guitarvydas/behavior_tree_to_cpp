@@ -1,11 +1,7 @@
 all: fb.pl
 
-edeb: fb.pl
-	./emit.pl <fb.pl
-
-deb: fb.pl
-	./contains.pl <fb.pl
-
+deb: fb.pl emitter.pl emit.pl
+	./emitter.pl <fb.pl
 
 fb.pl : diagram-to-factbase.bash connected.pl kind.pl name.pl str.pl boundingbox.pl Makefile \
 	contains.pl

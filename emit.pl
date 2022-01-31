@@ -1,21 +1,7 @@
-#!/usr/bin/env swipl
-:- use_module(library(http/json)).
-:- initialization emitjson.
-
-emitjson:-
-    consult(user),
-    consult(query),
-    bagof([Node,Children],children(Node,Children),Bag),
-    current_output(Out),
-    %write(Out, Bag),
-    json_write(Out, Bag),
-    nl,
-    halt.
-
 sequence(Node,Children):-
     bagof(Child,treefact(connected,Node,Child),Children).
 
-children(Node,Children):-
+sequencechildren(Node,Children):-
     sequence(Node,ChildrenNodes),
     describe(ChildrenNodes,Children,0).
 
