@@ -1,0 +1,30 @@
+tokens {
+main = token+
+token
+  = applySyntactic<Sync>
+  | applySyntactic<Async>
+  | applySyntactic<Inputs>
+  | applySyntactic<Outputs>
+  | line
+
+Sync = "sync" colon name
+Async = "async" colon name
+Inputs = "inputs" colon string+
+Outputs = "outputs" colon string+
+
+line = lineChar+ eol
+
+name = nameFirst nameRest*
+nameFirst = "A" .. "Z" | "a" .. "z" | "_"
+nameRest = "0" .. "9" | nameFirst
+string = dq stringChar* dq
+dq = "\""
+stringChar = ~dq any
+comment = "//" commentChar*
+lineChar = commentChar
+colon = ":" spaces
+commentChar = ~eol ~end any
+eol = (nl | end)
+nl = "\n"
+space += comment
+}

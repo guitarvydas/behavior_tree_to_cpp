@@ -25,6 +25,7 @@ kind_format(Out, [[H1,H2]|T], S):-
 %% rectangle yes       #fallback       -> fallback
 %% rectangle yes                 red   -> syncnode
 %% rectangle yes                 gray  -> textbox
+%% rectangle no        _         yellow-> codebox
 %% else      yes                       -> asyncnode
 %% }
 
@@ -33,6 +34,7 @@ kind(Node, sequence):-rectangle(Node),textSequence(Node).
 kind(Node, fallback):-rectangle(Node),textFallback(Node).
 kind(Node, syncnode):-rectangle(Node),textOther(Node),red(Node).
 kind(Node, textbox):-rectangle(Node),textOther(Node),gray(Node).
+kind(Node, codebox):-rectangle(Node),textOther(Node),yellow(Node).
 kind(Node, asyncnode):-rectangle(Node),textOther(Node),colorOther(Node), \+ kind(Node, comment).
 
 textSequence(Node):-name(Node,"#sequence").
@@ -40,6 +42,7 @@ textFallback(Node):-name(Node,"#fallback").
 textOther(Node):- \+ textSequence(Node), \+ textFallback(Node).
 red(Node):-diagram_fact(fillColor,Node,"#f8cecc").
 gray(Node):-diagram_fact(fillColor,Node,"#f5f5f5").
+yellow(Node):-diagram_fact(fillColor,Node,"#fff2cc").
 colorOther(Node):- \+ red(Node), \+ gray(Node).
 
 edge(Node):-vertex(Node), diagram_fact(edge,Node,_).

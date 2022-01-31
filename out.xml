@@ -1,0 +1,9 @@
+<BehaviorTree ID="out">
+  <sequence name="cell_11">
+    <SaySomething message = "Start thinking..."/>
+    <ThinkWhatToSay text="{the_answer}"/>
+    <SaySomething message="{the_answer}"/>
+    <SaySomething2 message = "SaySomething2 works too"/>
+    <SaySomething2 message="{the_answer}"/>
+  </sequence>
+</BehaviorTree>

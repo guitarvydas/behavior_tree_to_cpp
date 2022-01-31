@@ -14,7 +14,7 @@ describeNode(Node,Description):-
     str(Textbox,Str),
     boundingbox_left(Node,Left),
     boundingbox_top(Node,Top),
-    Description=desc{node:Node,type:Name,str:Str,left:Left,top:Top}.
+    Description=desc{id:Node,prototype:Name,str:Str,left:Left,top:Top}.
 
 describe([],[]).
 describe([Child|MoreChildren],[ChildDescription|MoreDescriptions]):-

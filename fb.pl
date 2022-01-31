@@ -1,4 +1,5 @@
 diagram_fact(align, cell_22, "left").
+diagram_fact(align, cell_23, "left").
 diagram_fact(as, cell_10, "geometry").
 diagram_fact(as, cell_11, "geometry").
 diagram_fact(as, cell_12, "geometry").
@@ -12,6 +13,7 @@ diagram_fact(as, cell_19, "geometry").
 diagram_fact(as, cell_20, "geometry").
 diagram_fact(as, cell_21, "geometry").
 diagram_fact(as, cell_22, "geometry").
+diagram_fact(as, cell_23, "geometry").
 diagram_fact(as, cell_6, "geometry").
 diagram_fact(as, cell_7, "geometry").
 diagram_fact(as, cell_8, "geometry").
@@ -29,6 +31,7 @@ diagram_fact(cell, cell_19, "").
 diagram_fact(cell, cell_20, "").
 diagram_fact(cell, cell_21, "").
 diagram_fact(cell, cell_22, "").
+diagram_fact(cell, cell_23, "").
 diagram_fact(cell, cell_4, "").
 diagram_fact(cell, cell_5, "").
 diagram_fact(cell, cell_6, "").
@@ -94,6 +97,7 @@ diagram_fact(fillColor, cell_18, "#f5f5f5").
 diagram_fact(fillColor, cell_19, "#f5f5f5").
 diagram_fact(fillColor, cell_20, "#f5f5f5").
 diagram_fact(fillColor, cell_21, "#f5f5f5").
+diagram_fact(fillColor, cell_23, "#fff2cc").
 diagram_fact(fontColor, cell_17, "#333333").
 diagram_fact(fontColor, cell_18, "#333333").
 diagram_fact(fontColor, cell_19, "#333333").
@@ -111,6 +115,7 @@ diagram_fact(height, cell_19, 30).
 diagram_fact(height, cell_20, 30).
 diagram_fact(height, cell_21, 40).
 diagram_fact(height, cell_22, 190).
+diagram_fact(height, cell_23, 120).
 diagram_fact(html, cell_10, 1).
 diagram_fact(html, cell_11, 1).
 diagram_fact(html, cell_12, 1).
@@ -124,6 +129,7 @@ diagram_fact(html, cell_19, 1).
 diagram_fact(html, cell_20, 1).
 diagram_fact(html, cell_21, 1).
 diagram_fact(html, cell_22, 1).
+diagram_fact(html, cell_23, 1).
 diagram_fact(html, cell_6, 1).
 diagram_fact(html, cell_7, 1).
 diagram_fact(html, cell_8, 1).
@@ -153,6 +159,7 @@ diagram_fact(parent, cell_19, id_1).
 diagram_fact(parent, cell_20, id_1).
 diagram_fact(parent, cell_21, id_1).
 diagram_fact(parent, cell_22, id_1).
+diagram_fact(parent, cell_23, id_1).
 diagram_fact(parent, cell_5, id_0).
 diagram_fact(parent, cell_6, id_1).
 diagram_fact(parent, cell_7, id_1).
@@ -176,6 +183,7 @@ diagram_fact(rounded, cell_19, 0).
 diagram_fact(rounded, cell_20, 0).
 diagram_fact(rounded, cell_21, 0).
 diagram_fact(rounded, cell_22, 0).
+diagram_fact(rounded, cell_23, 0).
 diagram_fact(source, cell_10, id_VDCRdWPJAwFapRl1d_3T__7).
 diagram_fact(source, cell_6, id_VDCRdWPJAwFapRl1d_3T__7).
 diagram_fact(source, cell_7, id_VDCRdWPJAwFapRl1d_3T__7).
@@ -192,6 +200,7 @@ diagram_fact(strokeColor, cell_18, "#666666").
 diagram_fact(strokeColor, cell_19, "#666666").
 diagram_fact(strokeColor, cell_20, "#666666").
 diagram_fact(strokeColor, cell_21, "#666666").
+diagram_fact(strokeColor, cell_23, "#d6b656").
 diagram_fact(synonym, cell_10, id_VDCRdWPJAwFapRl1d_3T__6).
 diagram_fact(synonym, cell_11, id_VDCRdWPJAwFapRl1d_3T__7).
 diagram_fact(synonym, cell_12, id_VDCRdWPJAwFapRl1d_3T__8).
@@ -205,6 +214,7 @@ diagram_fact(synonym, cell_19, id_VDCRdWPJAwFapRl1d_3T__15).
 diagram_fact(synonym, cell_20, id_VDCRdWPJAwFapRl1d_3T__16).
 diagram_fact(synonym, cell_21, id_VDCRdWPJAwFapRl1d_3T__17).
 diagram_fact(synonym, cell_22, id_VDCRdWPJAwFapRl1d_3T__18).
+diagram_fact(synonym, cell_23, id_VDCRdWPJAwFapRl1d_3T__19).
 diagram_fact(synonym, cell_4, id_0).
 diagram_fact(synonym, cell_5, id_1).
 diagram_fact(synonym, cell_6, id_VDCRdWPJAwFapRl1d_3T__2).
@@ -228,6 +238,7 @@ diagram_fact(value, cell_19, "message=&quot;{the_answer}&quot;").
 diagram_fact(value, cell_20, "message=&quot;{the_answer}&quot;").
 diagram_fact(value, cell_21, "message = &quot;Start thinking...&quot;").
 diagram_fact(value, cell_22, "&lt;div&gt;&lt;div&gt;&amp;lt;root main_tree_to_execute = &quot;MainTree&quot; &amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;BehaviorTree ID=&quot;MainTree&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;Sequence name=&quot;root_sequence&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;start thinking...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;ThinkWhatToSay&amp;nbsp; &amp;nbsp;text=&quot;{the_answer}&quot;/&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;SaySomething2 works too...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;/Sequence&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;/BehaviorTree&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/root&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;").
+diagram_fact(value, cell_23, "&lt;span&gt;sync action ThinkWhatToSay&lt;br&gt;inputs:&lt;br&gt;outputs: &quot;text&quot;&lt;br&gt;tick:&lt;br&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; // the output may change at each tick(). Here we keep it simple.&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/span&gt;&lt;br&gt;").
 diagram_fact(vertex, cell_11, 1).
 diagram_fact(vertex, cell_12, 1).
 diagram_fact(vertex, cell_13, 1).
@@ -240,6 +251,7 @@ diagram_fact(vertex, cell_19, 1).
 diagram_fact(vertex, cell_20, 1).
 diagram_fact(vertex, cell_21, 1).
 diagram_fact(vertex, cell_22, 1).
+diagram_fact(vertex, cell_23, 1).
 diagram_fact(verticalAlign, cell_10, "top").
 diagram_fact(verticalAlign, cell_11, "top").
 diagram_fact(verticalAlign, cell_12, "top").
@@ -263,6 +275,7 @@ diagram_fact(whiteSpace, cell_19, "wrap").
 diagram_fact(whiteSpace, cell_20, "wrap").
 diagram_fact(whiteSpace, cell_21, "wrap").
 diagram_fact(whiteSpace, cell_22, "wrap").
+diagram_fact(whiteSpace, cell_23, "wrap").
 diagram_fact(width, cell_11, 240).
 diagram_fact(width, cell_12, 160).
 diagram_fact(width, cell_13, 170).
@@ -275,6 +288,7 @@ diagram_fact(width, cell_19, 140).
 diagram_fact(width, cell_20, 140).
 diagram_fact(width, cell_21, 150).
 diagram_fact(width, cell_22, 390).
+diagram_fact(width, cell_23, 390).
 diagram_fact(x, cell_11, 440).
 diagram_fact(x, cell_12, 440).
 diagram_fact(x, cell_13, 660).
@@ -287,6 +301,7 @@ diagram_fact(x, cell_19, 450).
 diagram_fact(x, cell_20, 877.5).
 diagram_fact(x, cell_21, 25).
 diagram_fact(x, cell_22, 120).
+diagram_fact(x, cell_23, 600).
 diagram_fact(y, cell_11, 50).
 diagram_fact(y, cell_12, 200).
 diagram_fact(y, cell_13, 200).
@@ -299,12 +314,14 @@ diagram_fact(y, cell_19, 240).
 diagram_fact(y, cell_20, 240).
 diagram_fact(y, cell_21, 235).
 diagram_fact(y, cell_22, 360).
+diagram_fact(y, cell_23, 360).
 treefact(connected, cell_11, cell_12).
 treefact(connected, cell_11, cell_13).
 treefact(connected, cell_11, cell_14).
 treefact(connected, cell_11, cell_15).
 treefact(connected, cell_11, cell_16).
 treefact(kind, cell_22, comment).
+treefact(kind, cell_23, comment).
 treefact(kind, cell_11, sequence).
 treefact(kind, cell_12, syncnode).
 treefact(kind, cell_13, syncnode).
@@ -316,6 +333,7 @@ treefact(kind, cell_18, textbox).
 treefact(kind, cell_19, textbox).
 treefact(kind, cell_20, textbox).
 treefact(kind, cell_21, textbox).
+treefact(kind, cell_23, codebox).
 treefact(name, cell_12, "SaySomething").
 treefact(name, cell_13, "SaySomething2").
 treefact(name, cell_14, "SaySomething2").
@@ -326,6 +344,7 @@ treefact(str, cell_18, "text=&quot;{the_answer}&quot;").
 treefact(str, cell_19, "message=&quot;{the_answer}&quot;").
 treefact(str, cell_20, "message=&quot;{the_answer}&quot;").
 treefact(str, cell_21, "message = &quot;Start thinking...&quot;").
+treefact(str, cell_23, "&lt;span&gt;sync action ThinkWhatToSay&lt;br&gt;inputs:&lt;br&gt;outputs: &quot;text&quot;&lt;br&gt;tick:&lt;br&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; // the output may change at each tick(). Here we keep it simple.&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/span&gt;&lt;br&gt;").
 treefact(boundingbox_left,cell_11,440).
 treefact(boundingbox_top,cell_11,50).
 treefact(boundingbox_right,cell_11,680).
@@ -374,6 +393,10 @@ treefact(boundingbox_left,cell_22,120).
 treefact(boundingbox_top,cell_22,360).
 treefact(boundingbox_right,cell_22,510).
 treefact(boundingbox_bottom,cell_22,550).
+treefact(boundingbox_left,cell_23,600).
+treefact(boundingbox_top,cell_23,360).
+treefact(boundingbox_right,cell_23,990).
+treefact(boundingbox_bottom,cell_23,480).
 
 
 treefact(contains,cell_13,cell_17).

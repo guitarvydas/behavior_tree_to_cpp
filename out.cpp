@@ -1,0 +1,2 @@
+&lt;span&gt;sync action ThinkWhatToSay&lt;br&gt;inputs:&lt;br&gt;outputs: &quot;text&quot;&lt;br&gt;tick:&lt;br&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; // the output may change at each tick(). Here we keep it simple.&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/span&gt;&lt;br&gt;
+

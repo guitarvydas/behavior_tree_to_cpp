@@ -1,0 +1,23 @@
+main [@tokens] = [[${tokens}]]
+token [token] = [[${token}]]
+Sync [ksync kcolon name] = [[#sync ${name}]]
+Async [kasync kcolon name] = [[#async ${name}]]
+Inputs  = [kinputs kcolon @strings] = [[#inputs ${strings}]]
+Outputs = [koutputs kcolon @strings] = [[#outputs ${strings}]]
+
+line [@cs eol] = [[${cs}${eol}]]
+
+name [nameFirst @nameRest] = [[${nameFirst}${nameRest}]]
+nameFirst [c] = [[${c}]]
+nameRest [c] [[${c}]]
+string [dq1 @cs dq2] = [[${dq1}${cs}${dq2}]]
+dq [c] = [[${c}]]]
+stringChar [c] = [[${c}]]
+comment [kss @cs] = [[]]
+lineChar [c] = [[${c}]]
+colon [kcolon spaces] = [[${kcolon}${spaces}]]
+commentChar [c] = [[${c}]]
+eol [c] = [[${c}]]
+nl [c] = [[${c}]]
+space [s] = [[${s}]]
+
