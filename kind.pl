@@ -1,4 +1,4 @@
-#!/usr/bin/env swipl
+#!/usr/bin/env swipl -q
 :- use_module(library(http/json)).
 :- initialization allkind.
 
