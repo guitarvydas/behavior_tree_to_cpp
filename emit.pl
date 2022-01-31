@@ -4,7 +4,8 @@ sequence(Node,Children):-
 sequencechildren(Node,Children):-
     sequence(Node,ChildrenNodes),
     describe(ChildrenNodes,Descriptions,0),
-    Children = Descriptions.
+    %Children = Descriptions.
+    sort(left, @<, Descriptions, Children).
 
 describeNode(Node,Description,Index):-
     name(Node,Name),
