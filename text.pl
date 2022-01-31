@@ -1,4 +1,4 @@
-#!/usr/bin/env swipl
+#!/usr/bin/env swipl -q
 :- use_module(library(http/json)).
 :- initialization alltext.
 
@@ -8,14 +8,12 @@ alltext:-
     current_output(Out),
     text_format(Out, Bag, S),
     write(S),
-    %json_write(Out, Bag, [width(128)]),
     halt.
 
     
 text_format(_, [], "").
 text_format(Out, [[H1,H2]|T], S):-
-    format(string(S1),"treefact(text, ~w, ~q).~n",[H1,H2]),
+    format(string(S1),"treefact(textbox, ~w, 0).~ntreefact(str, ~w, ~q).~n",[H1,H1,H2]),
     text_format(Out,T,S2),
     string_concat(S1,S2,S).
 
-text(Node, Text):-diagram_fact(value, Node, Text), treefact(kind, Node, textbox).

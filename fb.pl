@@ -323,8 +323,4 @@ treefact(name, cell_14, "SaySomething2").
 treefact(name, cell_15, "ThinkWhatToSay").
 treefact(name, cell_16, "SaySomething").
 treefact(name, cell_22, "&lt;div&gt;&lt;div&gt;&amp;lt;root main_tree_to_execute = &quot;MainTree&quot; &amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;BehaviorTree ID=&quot;MainTree&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;Sequence name=&quot;root_sequence&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;start thinking...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;ThinkWhatToSay&amp;nbsp; &amp;nbsp;text=&quot;{the_answer}&quot;/&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;SaySomething2 works too...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;/Sequence&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;/BehaviorTree&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/root&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;").
-treefact(text, cell_17, "message = &quot;SaySomething2 works too&quot;").
-treefact(text, cell_18, "text=&quot;{the_answer}&quot;").
-treefact(text, cell_19, "message=&quot;{the_answer}&quot;").
-treefact(text, cell_20, "message=&quot;{the_answer}&quot;").
-treefact(text, cell_21, "message = &quot;Start thinking...&quot;").
+

@@ -4,7 +4,7 @@
 
 emitjson:-
     consult(user),
-    consult(namepl),
+    consult(query),
     bagof([Node,Children],children(Node,Children),Bag),
     current_output(Out),
     %write(Out, Bag),
