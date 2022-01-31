@@ -7,7 +7,7 @@ sequencechildren(Node,Children):-
     %Children = Descriptions.
     sort(left, @<, Descriptions, Children).
 
-describeNode(Node,Description,Index):-
+describeNode(Node,Description):-
     name(Node,Name),
     contains(Node,Textbox),
     textbox(Textbox),
@@ -18,6 +18,6 @@ describeNode(Node,Description,Index):-
 
 describe([],[],_).
 describe([Child|MoreChildren],[ChildDescription|MoreDescriptions],Index):-
-    describeNode(Child,ChildDescription,Index),
+    describeNode(Child,ChildDescription),
     N is Index + 1,
     describe(MoreChildren,MoreDescriptions,N).
