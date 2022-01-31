@@ -13,3 +13,5 @@ str(Node,String) :- textbox(Node), treefact(str, Node, String).
 
 contains(Node,Child) :- treefact(contains, Node, Child).
 
+boundingbox_left(Node,L) :- treefact(boundingbox_left, Node, L).
+boundingbox_top(Node,Top) :- treefact(boundingbox_top, Node, Top).
