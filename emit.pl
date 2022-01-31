@@ -3,7 +3,8 @@ sequence(Node,Children):-
 
 sequencechildren(Node,Children):-
     sequence(Node,ChildrenNodes),
-    describe(ChildrenNodes,Children,0).
+    describe(ChildrenNodes,Descriptions,0),
+    Children = Descriptions.
 
 describeNode(Node,Description,Index):-
     name(Node,Name),
