@@ -1,9 +1,3 @@
-#!/usr/bin/env swipl
-:- initialization query.
-
-query:-
-    consult(user),
-    triple(father,paul,F),
-    write(user_output,F),
+text(Node, Text):-diagram_fact(value, Node, Text), treefact(kind, Node, textbox).
     halt.
 
