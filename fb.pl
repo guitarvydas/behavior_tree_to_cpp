@@ -376,3 +376,10 @@ treefact(boundingbox_right,cell_22,510).
 treefact(boundingbox_bottom,cell_22,550).
 
 
+treefact(contains,cell_13,cell_17).
+treefact(contains,cell_15,cell_18).
+treefact(contains,cell_12,cell_19).
+treefact(contains,cell_14,cell_20).
+treefact(contains,cell_16,cell_21).
+
+

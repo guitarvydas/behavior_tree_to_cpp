@@ -13,7 +13,7 @@ allcontains :-
 formatContains(Node,Child,S) :-
     format(string(S), "treefact(contains,~w,~w).~n", [Node, Child]).
 
-formatContainsList([], "").
+formatContainsList([], '').
 formatContainsList([[Node,Child]|Rest], S) :-
     formatContains(Node, Child, Ssingle),
     formatContainsList(Rest, Srest),
