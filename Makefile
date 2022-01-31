@@ -4,9 +4,7 @@ edeb: fb.pl
 	./emit.pl <fb.pl
 
 deb: fb.pl
-	touch boundingbox.pl
-	make fb.pl
-
+	./contains.pl <fb.pl
 
 
 fb.pl : diagram-to-factbase.bash connected.pl kind.pl name.pl str.pl boundingbox.pl
