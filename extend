@@ -1,0 +1,12 @@
+#!/bin/sh
+in=$1
+out=$1
+script=./$2
+temp=temp_${RANDOM}
+temp2=temp2_${RANDOM}
+
+$script <$in >$temp
+cat $in $temp >$temp2
+rm -f $in
+mv $temp2 $in
+rm -f $temp

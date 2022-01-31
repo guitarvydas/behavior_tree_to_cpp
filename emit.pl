@@ -21,7 +21,10 @@ children(Node,Children):-
 
 describeNode(Child,ChildDescription,Index):-
     name(Child,Name),
-    ChildDescription=desc{node:Child,type:Name,index:Index}.
+    contains(Child,Textbox),
+    textbox(Textbox),
+    str(Textbox,Str),
+    ChildDescription=desc{node:Child,type:Name,index:Index,str:Str}.
 
 describe([],[],_).
 describe([Child|MoreChildren],[ChildDescription|MoreDescriptions],Index):-

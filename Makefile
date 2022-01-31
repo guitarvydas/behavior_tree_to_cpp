@@ -1,14 +1,20 @@
 all: fb.pl
 
-deb: fb.pl
+edeb: fb.pl
 	./emit.pl <fb.pl
 
-fb.pl : diagram-to-factbase.bash connected.pl kind.pl name.pl str.pl
-	./diagram-to-factbase.bash '..' 'tree.drawio' >fb.pl
-	./connected.pl <fb.pl >>fb.pl
-	./kind.pl <fb.pl >>fb.pl 
-	./name.pl <fb.pl >>fb.pl
-	./str.pl <fb.pl >>fb.pl
+deb: fb.pl
+	touch boundingbox.pl
+	make fb.pl
 
+
+
+fb.pl : diagram-to-factbase.bash connected.pl kind.pl name.pl str.pl boundingbox.pl
+	./diagram-to-factbase.bash '..' 'tree.drawio' >fb.pl
+	./extend fb.pl connected.pl
+	./extend fb.pl kind.pl
+	./extend fb.pl name.pl
+	./extend fb.pl str.pl
+	./extend fb.pl boundingbox.pl
 
 
