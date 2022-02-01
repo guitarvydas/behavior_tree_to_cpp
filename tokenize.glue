@@ -6,8 +6,8 @@ Inputs  [kinputs kcolon @strings eol] = [[#inputs ${strings}\n]]
 Outputs [koutputs kcolon @strings eol] = [[#outputs ${strings}\n]]
 Tick [ktick kcolon eol] = [[#tick\n]]
 
-line [@cs eol] = [[${cs}${eol}]]
-lineAtEOF [@cs] = [[${cs}]]
+line [@cs eol] = [[#line ${cs}\n]]
+lineAtEOF [@cs] = [[# line ${cs}\n]]
 
 name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
 nameFirst [c] = [[${c}]]
