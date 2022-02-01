@@ -5,7 +5,8 @@ fb.pl out.json: tree.drawio \
 	str.pl boundingbox.pl Makefile \
 	contains.pl \
 	emitter.pl emit.pl \
-	xmlemit.py
+	xmlemit.py \
+	tokens.json
 	./diagram-to-factbase.bash '..' 'tree.drawio' >fb.pl
 	./extend fb.pl connected.pl
 	./extend fb.pl kind.pl
@@ -15,7 +16,7 @@ fb.pl out.json: tree.drawio \
 	./extend fb.pl contains.pl
 	./emitter.pl <fb.pl >out.json
 	./xmlemit.py out.json >out.xml
+	./tokenize.bash <fb.pl >tokens.json
 
 debug: out.json fb.pl
-	./tokenize.bash <fb.pl
 

@@ -1,9 +1,9 @@
-main [@tokens] = [[[\n${tokens}{"token":"EOF"}\n]]
+main [@tokens] = [[[\n${tokens}{"token":"EOF"}\n]\n]]
 token [token] = [[${token}]]
 Sync [ksync kcolon name eol] = [[{"token":"sync", "content":"${name}"},\n]]
 Async [kasync kcolon name eol] = [["token":"async", "content":"${name}"},\n]]
-Inputs  [kinputs kcolon @strings eol] = [["token":"inputs", "content":"${strings}"},\n]]
-Outputs [koutputs kcolon @strings eol] = [["token":"outputs", "content":"${strings}"},\n]]
+Inputs  [kinputs kcolon @strings eol] = [[{"token":"inputs", "content":"${strings}"},\n]]
+Outputs [koutputs kcolon @strings eol] = [[{"token":"outputs", "content":"${strings}"},\n]]
 Tick [ktick kcolon eol] = [[{"token":"tick"}\n]]
 
 line [@cs eol]  = [[{"token":"line", "content":"${support.encode (cs)}"},\n]]
