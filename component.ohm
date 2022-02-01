@@ -2,7 +2,12 @@ code {
 Main = "[" Component+ Token<"EOF"> "]"
 Component = ComponentKind Inputs Outputs Code
 
-ComponentKind = (Token<"async"> | Token<"sync">)
+ComponentKind
+  = AsyncKind
+  | SyncKind
+
+AsyncKind = Token<"async">
+SyncKind = Token<"sync">
 
 Inputs = Token<"inputs">
 Outputs = Token<"outputs">

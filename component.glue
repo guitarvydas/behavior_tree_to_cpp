@@ -1,0 +1,33 @@
+Main [klb @Components EOF krb] = [[${Components}]]
+Component [Kind Inputs Outputs Code] = [[\n${Kind}\n${Inputs}\n${Outputs}\n${Code}]]
+
+ComponentKind [k] = [[${k}]]
+
+AsyncKind [content] = [[async ${content} ]]
+SyncKind [content] = [[sync ${content} ]]
+
+Inputs [content] = [[${content} ]]
+Outputs [content] = [[${content} ]]
+Code [ktick @lines] = [[{\n${lines}\n}\n]]
+
+Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content} ]]
+
+Content [dq1 kcontent dq2 kcolon str] = [[${str}]]
+
+
+
+
+name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
+nameFirst [c] = [[${c}]]
+nameRest [c] = [[${c}]]
+string [dq1 @cs dq2 ws] = [[${dq1}${cs}${dq2}${ws}]]
+dq [c] = [[${c}]]
+stringChar [c] = [[${c}]]
+comment [kss @cs eol] = [[\n]]
+lineChar [c] = [[${c}]]
+colon [kcolon ws] = [[${kcolon}${ws}]]
+commentChar [c] = [[${c}]]
+eol [c] = [[${c}]]
+unicodechar [c] = [[${c}]]
+ws [c] = [[${c}]]
+space [c] = [[${c}]]

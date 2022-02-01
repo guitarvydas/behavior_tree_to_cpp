@@ -18,5 +18,5 @@ fb.pl out.json: tree.drawio \
 	./xmlemit.py out.json >out.xml
 	./tokenize.bash <fb.pl >tokens.json
 
-debug: out.json fb.pl
-
+debug: tokens.json
+	./parsecomponent.bash <tokens.json
