@@ -1,0 +1,8 @@
+sync :  ThinkWhatToSay
+inputs :
+outputs : "text"
+    // the output may change at each tick(). Here we keep it simple.
+    setOutput("text", "The answer is 42" );
+    return NodeStatus::SUCCESS;
+
+

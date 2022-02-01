@@ -5,14 +5,16 @@ token
   | applySyntactic<Async>
   | applySyntactic<Inputs>
   | applySyntactic<Outputs>
-  | line
+  | codeblock
+  | space
 
 Sync = "sync" colon name
 Async = "async" colon name
-Inputs = "inputs" colon string+
-Outputs = "outputs" colon string+
+Inputs = "inputs" colon string*
+Outputs = "outputs" colon string*
 
-line = lineChar+ eol
+codeblock = spaces line+ spaces
+line = lineChar* eol
 
 name = nameFirst nameRest*
 nameFirst = "A" .. "Z" | "a" .. "z" | "_"
@@ -21,10 +23,11 @@ string = dq stringChar* dq
 dq = "\""
 stringChar = ~dq any
 comment = "//" commentChar*
-lineChar = commentChar
-colon = ":" spaces
-commentChar = ~eol ~end any
-eol = (nl | end)
+lineChar = ~"}" commentChar
+colon = ":"
+commentChar = ~eol any
+eol = nl
 nl = "\n"
-space += comment
+xspace = comment | ("\u{0080}" .. "\u{FFFFF}")
+space += xspace
 }

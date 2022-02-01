@@ -1,6 +1,8 @@
 all: fb.pl
 
-fb.pl out.json: diagram-to-factbase.bash connected.pl kind.pl name.pl str.pl boundingbox.pl Makefile \
+fb.pl out.json: tree.drawio \
+	diagram-to-factbase.bash connected.pl kind.pl name.pl \
+	str.pl boundingbox.pl Makefile \
 	contains.pl \
 	emitter.pl emit.pl \
 	xmlemit.py
@@ -15,6 +17,5 @@ fb.pl out.json: diagram-to-factbase.bash connected.pl kind.pl name.pl str.pl bou
 	./xmlemit.py out.json >out.xml
 
 debug: out.json fb.pl
-	./emitcode.pl <fb.pl >out.cpp
-	cat out.cpp
+	./parsecode.bash <fb.pl
 
