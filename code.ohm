@@ -33,6 +33,3 @@ unicodechar = "\u{0080}" .. "\u{FFFFF}"
 ws = " " | "\t" | unicodechar | comment
 space := ws
 }
-
-
-
