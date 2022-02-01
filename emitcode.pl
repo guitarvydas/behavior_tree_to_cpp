@@ -6,14 +6,12 @@ emitcode:-
     consult(user),
     consult(query),
     consult(emit),
-    bagof(Code,codestr(_,Code),Bag),
-    %% current_output(Out),
-    %% json_write(Out, Bag, [width(128)),
+    bagof([Node,Code],codestr(Node,Code),Bag),
     code_write(Bag),
     nl,
     halt.
 
 code_write([]).
-code_write([First|Rest]) :- 
-    writeln(First), 
+code_write([[_,Code]|Rest]) :- 
+    writeln(Code), 
     code_write(Rest).
