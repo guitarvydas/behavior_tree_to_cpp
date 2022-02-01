@@ -1,19 +1,19 @@
 tokens {
 main = token+
 token
-  = xSync
-  | xAsync
-  | xInputs
-  | xOutputs
-  | xTick
+  = applySyntactic<Sync>
+  | applySyntactic<Async>
+  | applySyntactic<Inputs>
+  | applySyntactic<Outputs>
+  | applySyntactic<Tick>
   | line
   | lineAtEOF
 
-xSync = ws* "sync" ws* colon name eol
-xAsync = ws* "async" ws* colon name eol
-xInputs = ws* "inputs" ws* colon string* eol
-xOutputs = ws* "outputs" ws* colon string* eol
-xTick = ws* "tick" colon eol
+Sync = "sync" colon name eol
+Async = "async" colon name eol
+Inputs = "inputs" colon string* eol
+Outputs = "outputs" colon string* eol
+Tick = "tick" colon eol
 
 line = lineChar* eol
 lineAtEOF = lineChar+
