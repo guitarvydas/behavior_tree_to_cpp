@@ -3,8 +3,21 @@ Component [Kind Inputs Outputs Code] = [[\n${Kind}\n${Inputs}\n${Outputs}\n${Cod
 
 ComponentKind [k] = [[${k}]]
 
-AsyncKind [content] = [[async ${content} ]]
-SyncKind [content] = [[sync ${content} ]]
+AsyncKind [content] = [[
+class ${content} : public AsyncActionNode
+{
+public:
+  ${content}(const std::string& name, const NodeConfiguration& config)
+    : SyncActionNode(name, config)
+]]
+
+SyncKind [content] = [[
+class ${content} : public SyncActionNode
+{
+public:
+  ${content}(const std::string& name, const NodeConfiguration& config)
+    : SyncActionNode(name, config)
+]]
 
 Inputs [content] = [[${content} ]]
 Outputs [content] = [[${content} ]]
@@ -17,10 +30,8 @@ Content [dq1 kcontent dq2 kcolon str] = [[${str}]]
 
 
 
-name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
-nameFirst [c] = [[${c}]]
-nameRest [c] = [[${c}]]
-string [dq1 @cs dq2 ws] = [[${dq1}${cs}${dq2}${ws}]]
+name [str] = [[${str}]]
+string [dq1 @cs dq2 ws] = [[${cs} ]]
 dq [c] = [[${c}]]
 stringChar [c] = [[${c}]]
 comment [kss @cs eol] = [[\n]]
