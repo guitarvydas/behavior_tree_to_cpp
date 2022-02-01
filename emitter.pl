@@ -9,6 +9,6 @@ emitjson:-
     bagof(ignore{nodekind:sequence,id:Node,children:Children},sequencechildren(Node,Children),Bag),
     current_output(Out),
     %write(Out, Bag),
-    json_write(Out, Bag),
+    json_write(Out, Bag, [width(128)]),
     nl,
     halt.

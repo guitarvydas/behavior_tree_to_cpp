@@ -4,6 +4,7 @@ Sync [ksync kcolon name] = [[#sync ${name}\n]]
 Async [kasync kcolon name] = [[#async ${name}\n]]
 Inputs  [kinputs kcolon @strings] = [[#inputs ${strings}\n]]
 Outputs [koutputs kcolon @strings] = [[#outputs ${strings}\n]]
+Tick [ktick kcolon] = [[#tick\n]]
 
 codeblock [spaces1 @lines spaces2] = [[${spaces1}${lines}${spaces2}]]
 line [@cs eol] = [[${cs}${eol}]]

@@ -5,6 +5,7 @@ token
   | applySyntactic<Async>
   | applySyntactic<Inputs>
   | applySyntactic<Outputs>
+  | applySyntactic<Tick>
   | codeblock
   | space
 
@@ -12,6 +13,7 @@ Sync = "sync" colon name
 Async = "async" colon name
 Inputs = "inputs" colon string*
 Outputs = "outputs" colon string*
+Tick = "tick" colon
 
 codeblock = spaces line+ spaces
 line = lineChar* eol

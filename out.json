@@ -1,27 +1,9 @@
 [
   {
     "children": [
-      {
-	"id":"cell_16",
-	"left":10,
-	"prototype":"SaySomething",
-	"str":"message = &quot;Start thinking...&quot;",
-	"top":200
-      },
-      {
-	"id":"cell_15",
-	"left":240,
-	"prototype":"ThinkWhatToSay",
-	"str":"text=&quot;{the_answer}&quot;",
-	"top":200
-      },
-      {
-	"id":"cell_12",
-	"left":440,
-	"prototype":"SaySomething",
-	"str":"message=&quot;{the_answer}&quot;",
-	"top":200
-      },
+      {"id":"cell_16", "left":10, "prototype":"SaySomething", "str":"message = &quot;Start thinking...&quot;", "top":200},
+      {"id":"cell_15", "left":240, "prototype":"ThinkWhatToSay", "str":"text=&quot;{the_answer}&quot;", "top":200},
+      {"id":"cell_12", "left":440, "prototype":"SaySomething", "str":"message=&quot;{the_answer}&quot;", "top":200},
       {
 	"id":"cell_13",
 	"left":660,
@@ -29,13 +11,7 @@
 	"str":"message = &quot;SaySomething2 works too&quot;",
 	"top":200
       },
-      {
-	"id":"cell_14",
-	"left":870,
-	"prototype":"SaySomething2",
-	"str":"message=&quot;{the_answer}&quot;",
-	"top":200
-      }
+      {"id":"cell_14", "left":870, "prototype":"SaySomething2", "str":"message=&quot;{the_answer}&quot;", "top":200}
     ],
     "id":"cell_11",
     "nodekind":"sequence"
