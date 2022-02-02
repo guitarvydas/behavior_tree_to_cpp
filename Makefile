@@ -21,3 +21,5 @@ fb.pl out.json: tree.drawio \
 	./makerwscript.bash <rewrite.spec >rewrite.rwscript
 
 debug: component.json
+	./rewrite.py rewrite.rwscript component.json
+

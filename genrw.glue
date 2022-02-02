@@ -1,4 +1,4 @@
-Main [trewrite eol @Chunk close eol] = [[${Chunk}]]
+Main [trewrite eol @Chunk close eol] = [[:[begin]\n${Chunk}:[end]\n]]
 Chunk [chunk] = [[:[newchunk]\n${chunk}:[endchunk]\n]]
 ForeachChunk [tforeach eol @Chunk close eol] = [[:[foreach]\n${Chunk}:[endforeach]\n]]
 ForeachFieldChunk [tforeachfield field eol @Chunk close eol] = [[:[foreachfield ${field}]\n${Chunk}:[endforeachfield]\n]]

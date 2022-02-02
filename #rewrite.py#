@@ -34,6 +34,7 @@ def interpret (command):
     elif (command == ":[collect]"):
                  state = collecting
     elif (command == ":[foreach]"):
+        foreachset = 
     elif (command == ":[endforeach]"):
     elif (command == ":[foreachfield name]"):
     elif (command == ":[endforeachfield name]"):
