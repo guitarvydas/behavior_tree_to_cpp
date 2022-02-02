@@ -1,0 +1,36 @@
+rewrite {
+Main = trewrite eol Chunk+ close eol
+Chunk = ForeachChunk | ForeachFieldChunk | BlockChunk
+ForeachChunk = tforeach eol Chunk+ close eol
+ForeachFieldChunk = tforeachfield field eol Chunk+ close eol
+BlockChunk = open eol line+ close eol
+
+field = topofstack "." name
+
+line = linechar+ eol
+linechar = ~close ~eol any
+
+trewrite = open "rewrite"
+tforeach = open "foreach"
+tforeachfield = open "foreachfield"
+tblock = open
+open = ":[" ws*
+close = ":]" ws*
+topofstack = "@"
+
+name = nameFirst nameRest*
+nameFirst = "A" .. "Z" | "a" .. "z" | "_"
+nameRest = "0" .. "9" | nameFirst
+
+comment = slashslashcomment | mdcomment
+slashslashcomment = "//" commentChar* eol
+mdcomment = octothorpe+ commentChar* eol
+commentChar = ~eol any
+eol = nl+
+nl = "\n"
+unicodechar = "\u{0080}" .. "\u{FFFFF}"
+comma = ","
+octothorpe = "#"
+ws = " " | "\t" | unicodechar | comment | comma | octothorpe
+space := ws
+}
