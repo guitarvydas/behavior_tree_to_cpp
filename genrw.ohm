@@ -1,36 +1,29 @@
 gen {
-Main = nl* Chunk+ close spaces
-Chunk = ForeachChunk | BlockChunk
-ForeachChunk = tforeach field eol Chunk+ close eol
-BlockChunk = open eol line+ close eol
+Main = tProgram Junk+ Chunk+ tEOF
 
-field = topofstack "." name
+Chunk = Foreach | Block
+Foreach = Token<"foreach"> Token<"name"> Chunk+
+Block = Token<"block"> Line+ Token<"endblock">
 
-line = linewitheol | linewithouteol
-linewitheol = linechar+ eol
-linewithouteol = linechar+
-linechar = ~close ~eol any
 
-trewrite = open "rewrite"
-tforeach = open "foreach"
-tblock = open
-open = ":[" ws*
-close = ":]" ws*
-topofstack = "@"
 
-name = nameFirst nameRest* ws*
-nameFirst = "A" .. "Z" | "a" .. "z" | "_"
-nameRest = "0" .. "9" | nameFirst
+Line = Token<"line">
 
-comment = slashslashcomment | mdcomment
-slashslashcomment = "//" commentChar* eol
-mdcomment = octothorpe+ commentChar* eol
+Token <s> = "{" dq "token" dq ":" dq s dq Content? "}"
+
+Content = dq "content" dq ":" string
+
+name = string
+string = dq stringChar* dq ws*
+dq = "\""
+stringChar = ~dq any
+comment = "//" commentChar* eol
+lineChar = commentChar
+colon = ":" ws*
 commentChar = ~eol any
-eol = nl+
-nl = "\n"
+eol = "\n"
 unicodechar = "\u{0080}" .. "\u{FFFFF}"
 comma = ","
-octothorpe = "#"
-ws = " " | "\t" | unicodechar | comment | comma | octothorpe
-space := ws
+ws = " " | "\t" | unicodechar | comment | comma
+space += ws
 }

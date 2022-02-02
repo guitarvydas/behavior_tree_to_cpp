@@ -1,4 +1,4 @@
-main [@tokens] = [[${tokens}]]
+main [@tokens] = [[${tokens}{"token":"EOF"}\n]]
 token [tok] = [[${tok}]]
 
 Program [k eol] = [[{"token":"program"}\n]]

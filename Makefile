@@ -1,4 +1,4 @@
-all: fb.pl
+all: component.json rwtokens.json
 
 fb.pl out.json: tree.drawio \
 	diagram-to-factbase.bash connected.pl kind.pl name.pl \
@@ -17,10 +17,12 @@ fb.pl out.json: tree.drawio \
 	./emitter.pl <fb.pl >out.json
 	./xmlemit.py out.json >out.xml
 	./tokenize.bash <fb.pl >tokens.json
+	./parsecomponent.bash <tokens.json >component.json
 
-debug: component.json
-	./rwtokenize.bash <rewrite.spec
-	#./parsecomponent.bash <tokens.json >component.json
-	#./makerwscript.bash <rewrite.spec
+rwtokens.json:
+	./rwtokenize.bash <rewrite.spec >rwtokens.json
+
+debug: component.json rwtokens.json
+	./makerwscript.bash <rewrite.spec
 	#	./rewrite.py rewrite.rwscript component.json
 

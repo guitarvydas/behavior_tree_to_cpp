@@ -1,35 +1,29 @@
-Main [trewrite eol @Chunk close eol] = [[(\n:(foreach component]\n${Chunk})\n)\n]]
-Chunk [chunk] = [[(newtext "${chunk}")\n]]
-ForeachChunk [tforeach field eol @Chunk close eol] = [[(foreach ${field}\n"${Chunk}")\n]]
-BlockChunk [open eol @line close eol] = [[(block "${line}")\n]]
+Main = tProgram Junk+ Chunk+ tEOF
 
-field [topofstack kdot name] = [[${name}]]
+Chunk = Foreach | Block
+Foreach = Token<"foreach"> Token<"name"> Chunk+
+Block = Token<"block"> Line+ Token<"endblock">
 
-line [L] = [[${L}\n]]
-linewitheol [@linechar eol] = [[${linechar}]]
-linewithouteol [@linechar] = [[${linechar}]]
-linechar [c] = [[${c}]]
+Line [k] = [[${k}]]
+tProgram [k] = [[${k}]]
+tEOF [k] = [[${k}]]
 
-trewrite [open krewrite] = [[${open} ${krewrite}]]
-tforeach [open kforeach] = [[${open} ${kforeach}]]
-tforeachfield [open kforeachfield] = [[${open} ${kforeachfield}]]
-tblock [open] = [[${open}]]
-open [k @ws] = [[${k} ${ws}]]
-close [k @ws] = [[${k} ${ws}]]
-topofstack [c] = [[${c}]]
 
-octothorpe [c] = [[${c}]]
 
-name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
-nameFirst [c] = [[${c}]]
-nameRest [c] = [[${c}]]
-comment [c] = [[${c}]] 
-slashslashcomment [kss @cs eol] = [[\n]]
-mdcomment [@octothorpes @cs eol] = [[\n]]
+
+Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content} ]]
+
+Content [dq1 kcontent dq2 kcolon str] = [[${str}]]
+
+name [str] = [[${str}]]
+string [dq1 @cs dq2 ws] = [[${cs} ]]
+dq [c] = [[${c}]]
+stringChar [c] = [[${c}]]
+comment [kss @cs eol] = [[\n]]
+lineChar [c] = [[${c}]]
+colon [kcolon ws] = [[${kcolon}${ws}]]
 commentChar [c] = [[${c}]]
-eol [@nl] = [[${nl}]]
-nl [c] = [[${c}]]
+eol [c] = [[${c}]]
 unicodechar [c] = [[${c}]]
-comma [c] = [[${c}]]
 ws [c] = [[${c}]]
 space [c] = [[${c}]]
