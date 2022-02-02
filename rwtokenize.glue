@@ -1,11 +1,11 @@
 main [@tokens] = [[${tokens}]]
 token [tok] = [[${tok}]]
 
-Program [k eol] = [[${k}${eol}]]
-Foreach [k Field eol] = [[${k} ${Field}${eol}]]
-Block [k eol] = [[${k}${eol}]]
-Close [k eol] = [[${k}${eol}]]
-Field [ttopOfStack tdot name] = [[${ttopOfStack}${tdot}${name}]]
+Program [k eol] = [[{"token":"program"}\n]]
+Foreach [k Field eol] = [[{"token":"foreach"}\n{"token":"name", "content":"${Field}"}\n]]
+Block [k eol] = [[{"token":"block"}\n]]
+Close [k eol] = [[{"token":"endblock"}\n]]
+Field [ttopOfStack tdot name] = [[${name}]]
 
 line [@cs eol] = [[${cs}${eol}]]
 lineAtEOF [@cs] = [[${cs}]]
