@@ -7,7 +7,9 @@ BlockChunk = open eol line+ close eol
 
 field = topofstack "." name
 
-line = linechar+ eol
+line = linewitheol | linewithouteol
+linewitheol = linechar+ eol
+linewithouteol = linechar+
 linechar = ~close ~eol any
 
 trewrite = open "rewrite"

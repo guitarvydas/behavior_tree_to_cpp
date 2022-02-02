@@ -1,12 +1,14 @@
-Main [trewrite eol @Chunk close eol] = [[${trewrite} ${eol} ${Chunk} ${close} ${eol}]]
-Chunk [chunk] = [[${chunk}]]
-ForeachChunk [tforeach eol @Chunk close eol] = [[${tforeach} ${eol} ${Chunk} ${close} ${eol}]]
-ForeachFieldChunk [tforeachfield field eol @Chunk close eol] = [[${tforeachfield} ${field} ${eol} ${Chunk} ${close} ${eol}]]
-BlockChunk [open eol @line close eol] = [[${open} ${eol} ${line} ${close} ${eol}]]
+Main [trewrite eol @Chunk close eol] = [[${Chunk}]]
+Chunk [chunk] = [[:[newchunk]\n${chunk}]]
+ForeachChunk [tforeach eol @Chunk close eol] = [[:[foreach]\n${Chunk}]]
+ForeachFieldChunk [tforeachfield field eol @Chunk close eol] = [[:[foreachfield ${field}]\n${Chunk}]]
+BlockChunk [open eol @line close eol] = [[:[collect]\n${line}\b:[endcollect]\n:[rewrite]\n]]
 
-field [topofstack kdot name] = [[${topofstack} ${kdot} ${name}]]
+field [topofstack kdot name] = [[${name}]]
 
-line [@linechar eol] = [[${linechar} ${eol}]]
+line [L] = [[${L}\n]]
+linewitheol [@linechar eol] = [[${linechar}]]
+linewithouteol [@linechar] = [[${linechar}]]
 linechar [c] = [[${c}]]
 
 trewrite [open krewrite] = [[${open} ${krewrite}]]
