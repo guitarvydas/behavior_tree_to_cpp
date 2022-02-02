@@ -5,7 +5,8 @@ Program [k eol] = [[{"token":"program"}\n]]
 Foreach [k Field eol] = [[{"token":"foreach"}\n{"token":"name", "content":"${Field}"}\n]]
 Block [k eol] = [[{"token":"block"}\n]]
 Close [k eol] = [[{"token":"endblock"}\n]]
-Field [ttopOfStack tdot name] = [[${name}]]
+FieldDef [name] = [[${name}]]
+Field [name] = [[{"tokent":"field", "content":"${name}"}]]
 
 line [@cs eol] = [[${cs}${eol}]]
 lineAtEOF [@cs] = [[${cs}]]
@@ -16,6 +17,8 @@ open [k] = [[${k}]]
 close [k] = [[${k}]]
 ttopOfStack [c] = [[${c}]]
 tdot [c] = [[${c}]]
+
+field [ttopOfStack tdot name] = [[${name}]]
 
 
 

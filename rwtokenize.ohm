@@ -10,10 +10,12 @@ token
   | lineAtEOF
 
 Program = tprogram eol
-Foreach = tforeach Field eol
+Foreach = tforeach FieldDef eol
 Block = open eol
 Close = close eol
-Field = ttopOfStack tdot name
+FieldDef = field
+Field = field
+field = ttopOfStack tdot name
 
 line = lineChar* eol
 lineAtEOF = lineChar+
