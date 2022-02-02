@@ -1,17 +1,17 @@
-Main = tProgram Junk+ Chunk+ tEOF
+Main [tProgram @Junk @Chunk tEOF] = [[${tProgram} ${Junk} ${Chunk} ${tEOF}]]
 
-Chunk = Foreach | Block
-Foreach = Token<"foreach"> Token<"name"> Chunk+
-Block = Token<"block"> Line+ Token<"endblock">
+Chunk [command] = [[${command}]]
+Foreach [tforeach tname @Chunk] = [[${tforeach} ${name} ${Chunk}]]
+Block [tblock @Lines tendblock] = [[${tblock} ${Lines} ${tendblock}]]
 
 Line [k] = [[${k}]]
-tProgram [k] = [[${k}]]
-tEOF [k] = [[${k}]]
+Program [k] = [[${k}]]
+EOF [k] = [[${k}]]
 
 
 
 
-Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content} ]]
+Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${content} ]]
 
 Content [dq1 kcontent dq2 kcolon str] = [[${str}]]
 

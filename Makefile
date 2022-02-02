@@ -6,7 +6,7 @@ fb.pl out.json: tree.drawio \
 	contains.pl \
 	emitter.pl emit.pl \
 	xmlemit.py \
-	tokens.json component.json
+	tokens.json
 	./diagram-to-factbase.bash '..' 'tree.drawio' >fb.pl
 	./extend fb.pl connected.pl
 	./extend fb.pl kind.pl
@@ -17,12 +17,13 @@ fb.pl out.json: tree.drawio \
 	./emitter.pl <fb.pl >out.json
 	./xmlemit.py out.json >out.xml
 	./tokenize.bash <fb.pl >tokens.json
+
+component.json: parsecomponent.bash tokens.json component.ohm component.glue tokens.json
 	./parsecomponent.bash <tokens.json >component.json
 
-rwtokens.json:
+rwtokens.json: rwtokenize.bash rwtokenize.ohm rwtokenize.glue
 	./rwtokenize.bash <rewrite.spec >rwtokens.json
 
 debug: component.json rwtokens.json
-	./makerwscript.bash <rewrite.spec
-	#	./rewrite.py rewrite.rwscript component.json
+	./makerwscript.bash <rwtokens.json
 

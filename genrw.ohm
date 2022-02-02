@@ -1,11 +1,13 @@
 gen {
-Main = tProgram Junk+ Chunk+ tEOF
+Main = Program Chunk+ EOF
 
 Chunk = Foreach | Block
 Foreach = Token<"foreach"> Token<"name"> Chunk+
 Block = Token<"block"> Line+ Token<"endblock">
 
 
+Program = Token<"program">
+EOF = Token<"eof">
 
 Line = Token<"line">
 
