@@ -5,7 +5,7 @@ token
   | applySyntactic<Foreach>
   | applySyntactic<Block>
   | applySyntactic<Close>
-  | applySyntactic<Field>
+  | applySyntactic<Var>
   | line
   | lineAtEOF
 
@@ -14,8 +14,10 @@ Foreach = tforeach FieldDef eol
 Block = open eol
 Close = close eol
 FieldDef = field
-Field = field
 field = ttopOfStack tdot name
+Var
+  = field       -- field
+  | ttopOfStack -- whole
 
 line = lineChar* eol
 lineAtEOF = lineChar+
@@ -36,7 +38,7 @@ stringChar = ~dq any
 comment = slashslashcomment | mdcomment
 slashslashcomment = "//" commentChar* eol
 mdcomment = octothorpe+ commentChar* eol
-lineChar = commentChar
+lineChar = ~ttopOfStack commentChar
 colon = ":" ws*
 commentChar = ~eol any
 eol = "\n"

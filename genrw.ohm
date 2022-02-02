@@ -2,14 +2,17 @@ gen {
 Main = Program Chunk+ EOF
 
 Chunk = Foreach | Block
-Foreach = Token<"foreach"> Token<"name"> Chunk+
-Block = Token<"block"> Line+ Token<"endblock">
+Foreach = Token<"foreach"> Token<"name"> Chunk+ Token<"end">
+Block = Token<"block"> Text+ Token<"end">
 
 
 Program = Token<"program">
 EOF = Token<"eof">
 
-Line = Token<"line">
+Text
+  = Token<"fieldref">
+  | Token<"tosref">
+  | Token<"text">
 
 Token <s> = "{" dq "token" dq ":" dq s dq Content? "}"
 

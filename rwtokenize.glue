@@ -4,9 +4,10 @@ token [tok] = [[${tok}]]
 Program [k eol] = [[{"token":"program"},\n]]
 Foreach [k Field eol] = [[{"token":"foreach"},\n{"token":"name", "content":"${Field}"},\n]]
 Block [k eol] = [[{"token":"block"},\n]]
-Close [k eol] = [[{"token":"endblock"},\n]]
+Close [k eol] = [[{"token":"end"},\n]]
 FieldDef [name] = [[${name}]]
-Field [name] = [[{"token":"field", "content":"${name}"},]]
+Var_field [name] = [[{"token":"fieldref", "content":"${name}"},]]
+Var_whole [name] = [[{"token":"tosref"},]]
 
 line [@cs eol] = [[${cs}${eol}]]
 lineAtEOF [@cs] = [[${cs}]]
@@ -23,8 +24,8 @@ field [ttopOfStack tdot name] = [[${name}]]
 
 
 
-line [@cs eol]  = [[{"token":"line", "content":"${support.encode (cs)}"},\n]]
-lineAtEOF [@cs] = [[{"token":"line", "content":"${support.encode (cs)}"},\n]]
+line [@cs eol]  = [[{"token":"text", "content":"${support.encode (cs)}"},\n]]
+lineAtEOF [@cs] = [[{"token":"text", "content":"${support.encode (cs)}"},\n]]
 
 name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
 nameFirst [c] = [[${c}]]
