@@ -20,7 +20,7 @@
         :[
                   factory.registerNodeType<@.kind>("@.kind")
         :]
-  :]
+  :]foreach
 ## 
   :[ 
           auto tree = factory.createTreeFromFile("./my_tree.xml");
@@ -75,6 +75,4 @@
                 };
   :]
 :]
-
 :]
-

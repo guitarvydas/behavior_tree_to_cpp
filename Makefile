@@ -21,7 +21,7 @@ fb.pl out.json: tree.drawio \
 component.json: parsecomponent.bash tokens.json component.ohm component.glue tokens.json
 	./parsecomponent.bash <tokens.json >component.json
 
-rwtokens.json: rwtokenize.bash rwtokenize.ohm rwtokenize.glue
+rwtokens.json: rwtokenize.bash rwtokenize.ohm rwtokenize.glue rewrite.spec
 	./rwtokenize.bash <rewrite.spec >rwtokens.json
 
 debug: component.json rwtokens.json

@@ -24,7 +24,7 @@ field [ttopOfStack tdot name] = [[${name}]]
 
 
 
-line [@cs eol]  = [[{"token":"text", "content":"${support.encode (cs)}"},\n]]
+line [@cs eol]  = [[{"token":"text", "content":"${support.encode (cs + "\n")}"},\n]]
 lineAtEOF [@cs] = [[{"token":"text", "content":"${support.encode (cs)}"},\n]]
 
 name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
