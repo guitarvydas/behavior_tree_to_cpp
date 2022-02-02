@@ -2,7 +2,7 @@ Main [trewrite eol @Chunk close eol] = [[${Chunk}]]
 Chunk [chunk] = [[:[newchunk]\n${chunk}]]
 ForeachChunk [tforeach eol @Chunk close eol] = [[:[foreach]\n${Chunk}]]
 ForeachFieldChunk [tforeachfield field eol @Chunk close eol] = [[:[foreachfield ${field}]\n${Chunk}]]
-BlockChunk [open eol @line close eol] = [[:[collect]\n${line}\b:[endcollect]\n:[rewrite]\n]]
+BlockChunk [open eol @line close eol] = [[:[collect]\n${line}\n:[endcollect]\n:[rewrite]\n]]
 
 field [topofstack kdot name] = [[${name}]]
 

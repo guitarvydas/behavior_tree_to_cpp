@@ -1,0 +1,76 @@
+:[newchunk]
+:[collect]
+int main()
+{
+using namespace DummyNodes;
+BehaviorTreeFactory factory;
+
+:[endcollect]
+:[rewrite]
+:[newchunk]
+:[foreach]
+:[newchunk]
+:[collect]
+factory.registerNodeType<@.kind>("@.kind")
+
+:[endcollect]
+:[rewrite]
+:[newchunk]
+:[collect]
+auto tree = factory.createTreeFromFile("./my_tree.xml");
+tree.tickRoot();
+return 0;
+}
+
+:[endcollect]
+:[rewrite]
+:[newchunk]
+:[foreach]
+:[newchunk]
+:[collect]
+class @.kind : public SyncActionNode
+{
+public:
+@.kind(const std::string& name, const NodeConfiguration& config)
+: SyncActionNode(name, config)
+{
+}
+static PortsList providedPorts()
+{
+return { 
+
+:[endcollect]
+:[rewrite]
+:[newchunk]
+:[foreachfield inputs]
+:[newchunk]
+:[collect]
+OutputPort (@)
+
+:[endcollect]
+:[rewrite]
+:[newchunk]
+:[collect]
+};
+}
+NodeStatus tick() override
+{
+
+:[endcollect]
+:[rewrite]
+:[newchunk]
+:[foreachfield lines]
+:[newchunk]
+:[collect]
+@
+
+:[endcollect]
+:[rewrite]
+:[newchunk]
+:[collect]
+}
+};
+
+:[endcollect]
+:[rewrite]
+

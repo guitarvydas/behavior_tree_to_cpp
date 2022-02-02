@@ -18,6 +18,6 @@ fb.pl out.json: tree.drawio \
 	./xmlemit.py out.json >out.xml
 	./tokenize.bash <fb.pl >tokens.json
 	./parsecomponent.bash <tokens.json >component.json
+	./makerwscript.bash <rewrite.spec >rewrite.rwscript
 
 debug: component.json
-	./rewrite.bash rewrite.spec component.json
