@@ -6,12 +6,15 @@ import re
 
 state = interpreting
 textStack = []
+controlStack = []
 eof = false
 
 with open (sys.argv[1]) as script:
     with open (sys.argv[2]) as text:
         global textStack
         textStack = []
+        global controlStack
+        controlStack = []
         global state
         state = interpreting
         global eof
@@ -33,10 +36,8 @@ def interpret (command):
                  textStack.pop ()
     elif (command == ":[collect]"):
                  state = collecting
-    elif (command == ":[foreach]"):
+    elif (command == ":[foreach name]"):
     elif (command == ":[endforeach]"):
-    elif (command == ":[foreachfield name]"):
-    elif (command == ":[endforeachfield name]"):
     elif (command == ":[rewrite]"):
     elif (command == ":[begin]"):
     elif (command == ":[end]"):

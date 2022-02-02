@@ -1,0 +1,39 @@
+main [@tokens] = [[${tokens}]]
+token [tok] = [[${tok}]]
+
+Program [k eol] = [[${k}${eol}]]
+Foreach [k Field eol] = [[${k} ${Field}${eol}]]
+Block [k eol] = [[${k}${eol}]]
+Close [k eol] = [[${k}${eol}]]
+Field [ttopOfStack tdot name] = [[${ttopOfStack}${tdot}${name}]]
+
+line [@cs eol] = [[${cs}${eol}]]
+lineAtEOF [@cs] = [[${cs}]]
+
+tprogram [k] = [[${k}]]
+tforeach [k] = [[${k}]] 
+open [k] = [[${k}]]
+close [k] = [[${k}]]
+ttopOfStack [c] = [[${c}]]
+tdot [c] = [[${c}]]
+
+
+
+
+line [@cs eol]  = [[{"token":"line", "content":"${support.encode (cs)}"},\n]]
+lineAtEOF [@cs] = [[{"token":"line", "content":"${support.encode (cs)}"},\n]]
+
+name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
+nameFirst [c] = [[${c}]]
+nameRest [c] = [[${c}]]
+string [dq1 @cs dq2 ws] = [[${dq1}${cs}${dq2}${ws}]]
+dq [c] = [[${c}]]
+stringChar [c] = [[${c}]]
+comment [kss @cs eol] = [[\n]]
+lineChar [c] = [[${c}]]
+colon [kcolon ws] = [[${kcolon}${ws}]]
+commentChar [c] = [[${c}]]
+eol [c] = [[${c}]]
+unicodechar [c] = [[${c}]]
+ws [c] = [[${c}]]
+space [c] = [[${c}]]

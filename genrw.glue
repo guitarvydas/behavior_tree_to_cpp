@@ -1,8 +1,7 @@
-Main [trewrite eol @Chunk close eol] = [[:[begin]\n${Chunk}:[end]\n]]
-Chunk [chunk] = [[:[newchunk]\n${chunk}:[endchunk]\n]]
-ForeachChunk [tforeach eol @Chunk close eol] = [[:[foreach]\n${Chunk}:[endforeach]\n]]
-ForeachFieldChunk [tforeachfield field eol @Chunk close eol] = [[:[foreachfield ${field}]\n${Chunk}:[endforeachfield]\n]]
-BlockChunk [open eol @line close eol] = [[:[collect]\n${line}:[endcollect]\n:[rewrite]\n]]
+Main [trewrite eol @Chunk close eol] = [[(\n:(foreach component]\n${Chunk})\n)\n]]
+Chunk [chunk] = [[(newtext "${chunk}")\n]]
+ForeachChunk [tforeach field eol @Chunk close eol] = [[(foreach ${field}\n"${Chunk}")\n]]
+BlockChunk [open eol @line close eol] = [[(block "${line}")\n]]
 
 field [topofstack kdot name] = [[${name}]]
 

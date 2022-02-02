@@ -1,53 +1,51 @@
+:[program
 # 
-:[rewrite
+:[foreach @.component
 ## 
   :[
-	  #include "behaviortree_cpp_v3/bt_factory.h"
+          #include "behaviortree_cpp_v3/bt_factory.h"
 
-	  // file that contains the custom nodes definitions
-	  #include "dummy_nodes.h"
+          // file that contains the custom nodes definitions
+          #include "dummy_nodes.h"
 
-	  int main()
-	  {
-		using namespace DummyNodes;
+          int main()
+          {
+                using namespace DummyNodes;
 
-		BehaviorTreeFactory factory;
+                BehaviorTreeFactory factory;
   :]
 ## 
-  :[foreach
+  :[foreach @.kind
 ### 
-	:[
-		  factory.registerNodeType<@.kind>("@.kind")
-	:]
+        :[
+                  factory.registerNodeType<@.kind>("@.kind")
+        :]
   :]
 ## 
   :[ 
-	  auto tree = factory.createTreeFromFile("./my_tree.xml");
+          auto tree = factory.createTreeFromFile("./my_tree.xml");
 
-	  tree.tickRoot();
-	  return 0;
-	  }
+          tree.tickRoot();
+          return 0;
+          }
   :]
 ## 
-  :[foreach
-### 
-	:[
-			class @.kind : public SyncActionNode
-			{
-			public:
-			  @.kind(const std::string& name, const NodeConfiguration& config)
-				: SyncActionNode(name, config)
-			  {
-			  }
+        :[
+                        class @.kind : public SyncActionNode
+                        {
+                        public:
+                          @.kind(const std::string& name, const NodeConfiguration& config)
+                                : SyncActionNode(name, config)
+                          {
+                          }
 
 
-			  static PortsList providedPorts()
-			  {
-				return { 
-	:]
-  :]
+                          static PortsList providedPorts()
+                          {
+                                return { 
+        :]
 ### 
-  :[foreachfield @.inputs
+  :[foreach @.inputs
 #### 
     :[
             OutputPort (@)
@@ -55,17 +53,17 @@
   :]
 ### 
   :[
-			};
-		  }
+                        };
+                  }
 
 
-		  // This Action writes a value into the port "text"
-		  NodeStatus tick() override
-		  {
+                  // This Action writes a value into the port "text"
+                  NodeStatus tick() override
+                  {
 
   :]
 ### 
-  :[foreachfield @.lines
+  :[foreach @.lines
 #### 
     :[
             @
@@ -73,7 +71,10 @@
   :]
 ### 
   :[
-		 }
-		};
+                 }
+                };
   :]
 :]
+
+:]
+

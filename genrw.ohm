@@ -1,8 +1,7 @@
-rewrite {
-Main = trewrite eol Chunk+ close eol
-Chunk = ForeachChunk | ForeachFieldChunk | BlockChunk
-ForeachChunk = tforeach eol Chunk+ close eol
-ForeachFieldChunk = tforeachfield field eol Chunk+ close eol
+gen {
+Main = nl* Chunk+ close spaces
+Chunk = ForeachChunk | BlockChunk
+ForeachChunk = tforeach field eol Chunk+ close eol
 BlockChunk = open eol line+ close eol
 
 field = topofstack "." name
@@ -14,7 +13,6 @@ linechar = ~close ~eol any
 
 trewrite = open "rewrite"
 tforeach = open "foreach"
-tforeachfield = open "foreachfield"
 tblock = open
 open = ":[" ws*
 close = ":]" ws*
