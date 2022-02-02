@@ -1,4 +1,8 @@
 #!/bin/bash
 prep=../prep/prep
 here=`pwd`
-$prep '.' '$' rewrite.ohm rewrite.glue --support=$here/rewritesupport.js --stop=1
+spec=$1
+text=$2
+$prep '.' '$' genrw.ohm genrw.glue --input=$spec --support=$here/genrwsupport.js --stop=1
+#chmod +x rewrite.py
+#./rewriter.py $text

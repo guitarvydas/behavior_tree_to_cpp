@@ -20,4 +20,4 @@ fb.pl out.json: tree.drawio \
 	./parsecomponent.bash <tokens.json >component.json
 
 debug: component.json
-	./rewrite.bash <rewrite.md
+	./rewrite.bash rewrite.spec component.json
