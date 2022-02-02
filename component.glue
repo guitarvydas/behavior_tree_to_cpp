@@ -1,27 +1,15 @@
-Main [klb @Components EOF krb] = [[${Components}]]
-Component [Kind Inputs Outputs Code] = [[\n${Kind}\n${Inputs}\n${Outputs}\n${Code}]]
+Main [klb @Components EOF krb] = [[\n[\n${Components}{}\n]\n]]
+Component [Kind Inputs Outputs Lines] = [[{\n${Kind}\n${Inputs}\n${Outputs}\n${Lines}\n},\n]]
 
 ComponentKind [k] = [[${k}]]
 
-AsyncKind [content] = [[
-class ${content} : public AsyncActionNode
-{
-public:
-  ${content}(const std::string& name, const NodeConfiguration& config)
-    : SyncActionNode(name, config)
-]]
+AsyncKind [content] = [["kind":"async",]]
 
-SyncKind [content] = [[
-class ${content} : public SyncActionNode
-{
-public:
-  ${content}(const std::string& name, const NodeConfiguration& config)
-    : SyncActionNode(name, config)
-]]
+SyncKind [content] = [["kind":"sync",]]
 
-Inputs [content] = [[${content} ]]
-Outputs [content] = [[${content} ]]
-Code [ktick @lines] = [[{\n${lines}\n}\n]]
+Inputs [content] = [["inputs":"${support.formatInputs (content)}",]]
+Outputs [content] = [["outputs":"${support.formatOutputs (content)}",]]
+Lines [ktick @lines] = [["lines":"${lines}"]]
 
 Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content} ]]
 

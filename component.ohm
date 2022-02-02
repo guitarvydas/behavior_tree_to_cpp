@@ -1,6 +1,6 @@
 code {
 Main = "[" Component+ Token<"EOF"> "]"
-Component = ComponentKind Inputs Outputs Code
+Component = ComponentKind Inputs Outputs Lines
 
 ComponentKind
   = AsyncKind
@@ -11,7 +11,7 @@ SyncKind = Token<"sync">
 
 Inputs = Token<"inputs">
 Outputs = Token<"outputs">
-Code = Token<"tick"> Token<"line">+
+Lines = Token<"tick"> Token<"line">+
 
 Token <s> = "{" dq "token" dq ":" dq s dq Content? "}"
 

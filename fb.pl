@@ -2,6 +2,9 @@ diagram_fact(align, cell_22, "left").
 diagram_fact(align, cell_23, "left").
 diagram_fact(align, cell_24, "left").
 diagram_fact(align, cell_25, "left").
+diagram_fact(align, cell_26, "left").
+diagram_fact(align, cell_27, "left").
+diagram_fact(align, cell_28, "left").
 diagram_fact(as, cell_10, "geometry").
 diagram_fact(as, cell_11, "geometry").
 diagram_fact(as, cell_12, "geometry").
@@ -18,6 +21,9 @@ diagram_fact(as, cell_22, "geometry").
 diagram_fact(as, cell_23, "geometry").
 diagram_fact(as, cell_24, "geometry").
 diagram_fact(as, cell_25, "geometry").
+diagram_fact(as, cell_26, "geometry").
+diagram_fact(as, cell_27, "geometry").
+diagram_fact(as, cell_28, "geometry").
 diagram_fact(as, cell_6, "geometry").
 diagram_fact(as, cell_7, "geometry").
 diagram_fact(as, cell_8, "geometry").
@@ -38,6 +44,9 @@ diagram_fact(cell, cell_22, "").
 diagram_fact(cell, cell_23, "").
 diagram_fact(cell, cell_24, "").
 diagram_fact(cell, cell_25, "").
+diagram_fact(cell, cell_26, "").
+diagram_fact(cell, cell_27, "").
+diagram_fact(cell, cell_28, "").
 diagram_fact(cell, cell_4, "").
 diagram_fact(cell, cell_5, "").
 diagram_fact(cell, cell_6, "").
@@ -126,6 +135,9 @@ diagram_fact(height, cell_22, 190).
 diagram_fact(height, cell_23, 120).
 diagram_fact(height, cell_24, 240).
 diagram_fact(height, cell_25, 220).
+diagram_fact(height, cell_26, 350).
+diagram_fact(height, cell_27, 490).
+diagram_fact(height, cell_28, 560).
 diagram_fact(html, cell_10, 1).
 diagram_fact(html, cell_11, 1).
 diagram_fact(html, cell_12, 1).
@@ -142,6 +154,9 @@ diagram_fact(html, cell_22, 1).
 diagram_fact(html, cell_23, 1).
 diagram_fact(html, cell_24, 1).
 diagram_fact(html, cell_25, 1).
+diagram_fact(html, cell_26, 1).
+diagram_fact(html, cell_27, 1).
+diagram_fact(html, cell_28, 1).
 diagram_fact(html, cell_6, 1).
 diagram_fact(html, cell_7, 1).
 diagram_fact(html, cell_8, 1).
@@ -174,6 +189,9 @@ diagram_fact(parent, cell_22, id_1).
 diagram_fact(parent, cell_23, id_1).
 diagram_fact(parent, cell_24, id_1).
 diagram_fact(parent, cell_25, id_1).
+diagram_fact(parent, cell_26, id_1).
+diagram_fact(parent, cell_27, id_1).
+diagram_fact(parent, cell_28, id_1).
 diagram_fact(parent, cell_5, id_0).
 diagram_fact(parent, cell_6, id_1).
 diagram_fact(parent, cell_7, id_1).
@@ -200,6 +218,9 @@ diagram_fact(rounded, cell_22, 0).
 diagram_fact(rounded, cell_23, 0).
 diagram_fact(rounded, cell_24, 0).
 diagram_fact(rounded, cell_25, 0).
+diagram_fact(rounded, cell_26, 0).
+diagram_fact(rounded, cell_27, 0).
+diagram_fact(rounded, cell_28, 0).
 diagram_fact(source, cell_10, id_VDCRdWPJAwFapRl1d_3T__7).
 diagram_fact(source, cell_6, id_VDCRdWPJAwFapRl1d_3T__7).
 diagram_fact(source, cell_7, id_VDCRdWPJAwFapRl1d_3T__7).
@@ -235,6 +256,9 @@ diagram_fact(synonym, cell_22, id_VDCRdWPJAwFapRl1d_3T__18).
 diagram_fact(synonym, cell_23, id_VDCRdWPJAwFapRl1d_3T__19).
 diagram_fact(synonym, cell_24, id_VDCRdWPJAwFapRl1d_3T__20).
 diagram_fact(synonym, cell_25, id_VDCRdWPJAwFapRl1d_3T__21).
+diagram_fact(synonym, cell_26, id_VDCRdWPJAwFapRl1d_3T__22).
+diagram_fact(synonym, cell_27, id_VDCRdWPJAwFapRl1d_3T__23).
+diagram_fact(synonym, cell_28, id_VDCRdWPJAwFapRl1d_3T__24).
 diagram_fact(synonym, cell_4, id_0).
 diagram_fact(synonym, cell_5, id_1).
 diagram_fact(synonym, cell_6, id_VDCRdWPJAwFapRl1d_3T__2).
@@ -261,6 +285,9 @@ diagram_fact(value, cell_22, "&lt;div&gt;&lt;div&gt;&amp;lt;root main_tree_to_ex
 diagram_fact(value, cell_23, "&lt;span&gt;sync :&amp;nbsp; ThinkWhatToSay&lt;br&gt;inputs :&lt;br&gt;outputs : &quot;text&quot;&lt;br&gt;tick:&lt;br&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; // the output may change at each tick(). Here we keep it simple.&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/span&gt;").
 diagram_fact(value, cell_24, "&lt;div&gt;&lt;div&gt;sync : SaySomething&lt;/div&gt;&lt;div&gt;inputs: &quot;message&quot;&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;msg.error() );&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
 diagram_fact(value, cell_25, "&lt;div&gt;sync : SaySomethingSimple&lt;/div&gt;&lt;div&gt;inputs:&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = self.getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;, msg.error());&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_26, "class ThinkWhatToSay : public SyncActionNode&#10;{&#10;public:&#10;  ThinkWhatToSay(const std::string&amp; name, const NodeConfiguration&amp; config)&#10;    : SyncActionNode(name, config)&#10;  {&#10;  }&#10;&#10;&#10;  static PortsList providedPorts()&#10;  {&#10;    return { OutputPort&lt;std::string&gt;(&quot;text&quot;) };&#10;  }&#10;&#10;&#10;  // This Action writes a value into the port &quot;text&quot;&#10;  NodeStatus tick() override&#10;  {&#10;    // the output may change at each tick(). Here we keep it simple.&#10;    setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&#10;    return NodeStatus::SUCCESS;&#10;  }&#10;};").
+diagram_fact(value, cell_27, "&lt;div&gt;// SyncActionNode (synchronous action) with an input port.&lt;/div&gt;&lt;div&gt;class SaySomething : public SyncActionNode&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;public:&lt;/div&gt;&lt;div&gt;&amp;nbsp; // If your Node has ports, you must use this constructor signature&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; SaySomething(const std::string&amp;amp; name, const NodeConfiguration&amp;amp; config)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; : SyncActionNode(name, config)&lt;/div&gt;&lt;div&gt;&amp;nbsp; { }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // It is mandatory to define this static method.&lt;/div&gt;&lt;div&gt;&amp;nbsp; static PortsList providedPorts()&lt;/div&gt;&lt;div&gt;&amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // This action has a single input port called &quot;message&quot;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Any port must have a name. The type is optional.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return { InputPort&amp;lt;std::string&amp;gt;(&quot;message&quot;) };&lt;/div&gt;&lt;div&gt;&amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // As usual, you must override the virtual function tick()&lt;/div&gt;&lt;div&gt;&amp;nbsp; NodeStatus tick() override&lt;/div&gt;&lt;div&gt;&amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;msg.error() );&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;div&gt;&amp;nbsp; }&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_28, "&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;#include &quot;behaviortree_cpp_v3/bt_factory.h&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;// file that contains the custom nodes definitions&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;#include &quot;dummy_nodes.h&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;int main()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; using namespace DummyNodes;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; BehaviorTreeFactory factory;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; factory.registerNodeType&amp;lt;SaySomething&amp;gt;(&quot;SaySomething&quot;);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; factory.registerNodeType&amp;lt;ThinkWhatToSay&amp;gt;(&quot;ThinkWhatToSay&quot;);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; // SimpleActionNodes can not define their own method providedPorts().&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; // We should pass a PortsList explicitly if we want the Action to&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; // be able to use getInput() or setOutput();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; PortsList say_something_ports = { InputPort&amp;lt;std::string&amp;gt;(&quot;message&quot;) };&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; factory.registerSimpleAction(&quot;SaySomething2&quot;, SaySomethingSimple,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;say_something_ports );&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; auto tree = factory.createTreeFromFile(&quot;./my_tree.xml&quot;);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; tree.tickRoot();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; /* Expected output:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: start thinking...&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: The answer is 42&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: SaySomething2 works too...&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: The answer is 42&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; */&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; return 0;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
 diagram_fact(vertex, cell_11, 1).
 diagram_fact(vertex, cell_12, 1).
 diagram_fact(vertex, cell_13, 1).
@@ -276,6 +303,9 @@ diagram_fact(vertex, cell_22, 1).
 diagram_fact(vertex, cell_23, 1).
 diagram_fact(vertex, cell_24, 1).
 diagram_fact(vertex, cell_25, 1).
+diagram_fact(vertex, cell_26, 1).
+diagram_fact(vertex, cell_27, 1).
+diagram_fact(vertex, cell_28, 1).
 diagram_fact(verticalAlign, cell_10, "top").
 diagram_fact(verticalAlign, cell_11, "top").
 diagram_fact(verticalAlign, cell_12, "top").
@@ -283,6 +313,9 @@ diagram_fact(verticalAlign, cell_13, "top").
 diagram_fact(verticalAlign, cell_14, "top").
 diagram_fact(verticalAlign, cell_15, "top").
 diagram_fact(verticalAlign, cell_16, "top").
+diagram_fact(verticalAlign, cell_26, "top").
+diagram_fact(verticalAlign, cell_27, "top").
+diagram_fact(verticalAlign, cell_28, "top").
 diagram_fact(verticalAlign, cell_6, "top").
 diagram_fact(verticalAlign, cell_7, "top").
 diagram_fact(verticalAlign, cell_8, "top").
@@ -302,6 +335,9 @@ diagram_fact(whiteSpace, cell_22, "wrap").
 diagram_fact(whiteSpace, cell_23, "wrap").
 diagram_fact(whiteSpace, cell_24, "wrap").
 diagram_fact(whiteSpace, cell_25, "wrap").
+diagram_fact(whiteSpace, cell_26, "wrap").
+diagram_fact(whiteSpace, cell_27, "wrap").
+diagram_fact(whiteSpace, cell_28, "wrap").
 diagram_fact(width, cell_11, 240).
 diagram_fact(width, cell_12, 160).
 diagram_fact(width, cell_13, 170).
@@ -317,6 +353,9 @@ diagram_fact(width, cell_22, 390).
 diagram_fact(width, cell_23, 390).
 diagram_fact(width, cell_24, 400).
 diagram_fact(width, cell_25, 390).
+diagram_fact(width, cell_26, 435).
+diagram_fact(width, cell_27, 435).
+diagram_fact(width, cell_28, 470).
 diagram_fact(x, cell_11, 440).
 diagram_fact(x, cell_12, 440).
 diagram_fact(x, cell_13, 660).
@@ -332,6 +371,9 @@ diagram_fact(x, cell_22, 120).
 diagram_fact(x, cell_23, 600).
 diagram_fact(x, cell_24, 560).
 diagram_fact(x, cell_25, 140).
+diagram_fact(x, cell_26, 1000).
+diagram_fact(x, cell_27, 650).
+diagram_fact(x, cell_28, 150).
 diagram_fact(y, cell_11, 50).
 diagram_fact(y, cell_12, 200).
 diagram_fact(y, cell_13, 200).
@@ -347,6 +389,9 @@ diagram_fact(y, cell_22, 360).
 diagram_fact(y, cell_23, 360).
 diagram_fact(y, cell_24, 520).
 diagram_fact(y, cell_25, 570).
+diagram_fact(y, cell_26, 360).
+diagram_fact(y, cell_27, 770).
+diagram_fact(y, cell_28, 800).
 treefact(connected, cell_11, cell_12).
 treefact(connected, cell_11, cell_13).
 treefact(connected, cell_11, cell_14).
@@ -356,6 +401,9 @@ treefact(kind, cell_22, comment).
 treefact(kind, cell_23, comment).
 treefact(kind, cell_24, comment).
 treefact(kind, cell_25, comment).
+treefact(kind, cell_26, comment).
+treefact(kind, cell_27, comment).
+treefact(kind, cell_28, comment).
 treefact(kind, cell_11, sequence).
 treefact(kind, cell_12, syncnode).
 treefact(kind, cell_13, syncnode).
@@ -443,6 +491,18 @@ treefact(boundingbox_left,cell_25,140).
 treefact(boundingbox_top,cell_25,570).
 treefact(boundingbox_right,cell_25,530).
 treefact(boundingbox_bottom,cell_25,790).
+treefact(boundingbox_left,cell_26,1000).
+treefact(boundingbox_top,cell_26,360).
+treefact(boundingbox_right,cell_26,1435).
+treefact(boundingbox_bottom,cell_26,710).
+treefact(boundingbox_left,cell_27,650).
+treefact(boundingbox_top,cell_27,770).
+treefact(boundingbox_right,cell_27,1085).
+treefact(boundingbox_bottom,cell_27,1260).
+treefact(boundingbox_left,cell_28,150).
+treefact(boundingbox_top,cell_28,800).
+treefact(boundingbox_right,cell_28,620).
+treefact(boundingbox_bottom,cell_28,1360).
 
 
 treefact(contains,cell_13,cell_17).
