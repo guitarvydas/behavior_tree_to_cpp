@@ -1,0 +1,6 @@
+:[for every input port]
+static PortsList providedPorts()
+{
+  return { InputPort<std::string>("@")};
+}
+:[end for every input port]

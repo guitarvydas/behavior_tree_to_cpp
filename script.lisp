@@ -14,7 +14,7 @@
 kind
 (textblock
 (text "factory.registerNodeType%3C")
-(fieldref kind)
+tosref
 (text "%3E(%22")
 tosref
 (text "%22)%0A")

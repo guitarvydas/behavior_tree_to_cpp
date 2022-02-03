@@ -17,7 +17,7 @@
   :[foreach @.kind
 ### 
         :[
-                  factory.registerNodeType<@.kind>("@")
+                  factory.registerNodeType<@>("@")
         :]
   :]foreach
 ## 

@@ -42,13 +42,14 @@
 
 (defun interpret-textblock (script object)
   (when script
-    (let ((command (first script))
-          (arg (second script)))
-      (cond
-       ((eq 'text command) (output arg))
-       ((eq 'fieldref command) (output (get-field object arg)))
-       ((eq 'tosref command) (output object))
-       (t (error "illegal textblock command"))))))
+    (if (eq 'tosref script)
+       (output object)
+      (let ((command (first script))
+            (arg (second script)))
+        (cond
+         ((eq 'text command) (output arg))
+         ((eq 'fieldref command) (output (get-field object arg)))
+         (t (error "illegal textblock command")))))))
 
 (defun output (x)
   (format *standard-output* "~a" (quri::url-decode x)))
