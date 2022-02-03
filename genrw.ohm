@@ -1,5 +1,5 @@
 gen {
-Main = Program Chunk+ EOF
+Main = Program Chunk+ Token<"end"> EOF
 
 Chunk = Foreach | Block
 Foreach = Token<"foreach"> Token<"name"> Chunk+ Token<"end">
@@ -7,7 +7,7 @@ Block = Token<"block"> Text+ Token<"end">
 
 
 Program = Token<"program">
-EOF = Token<"eof">
+EOF = Token<"EOF">
 
 Text
   = Token<"fieldref">

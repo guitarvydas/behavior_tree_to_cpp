@@ -1,13 +1,13 @@
-main [@tokens] = [[${tokens}{"token":"EOF"}\n]]
+main [@tokens] = [[${tokens}{"token":"EOF", "content":""}\n]]
 token [tok] = [[${tok}]]
 
-Program [k eol] = [[{"token":"program"},\n]]
+Program [k eol] = [[{"token":"program", "content":""},\n]]
 Foreach [k Field eol] = [[{"token":"foreach"},\n{"token":"name", "content":"${Field}"},\n]]
-Block [k eol] = [[{"token":"block"},\n]]
-Close [k eol] = [[{"token":"end"},\n]]
+Block [k eol] = [[{"token":"block", "content":""},\n]]
+Close [k eol] = [[{"token":"end", "content":""},\n]]
 FieldDef [name] = [[${name}]]
 Var_field [name] = [[{"token":"fieldref", "content":"${name}"},]]
-Var_whole [name] = [[{"token":"tosref"},]]
+Var_whole [name] = [[{"token":"tosref", "content":""},]]
 
 line [@cs eol] = [[${cs}${eol}]]
 lineAtEOF [@cs] = [[${cs}]]
