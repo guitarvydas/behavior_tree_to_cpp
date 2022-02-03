@@ -24,13 +24,20 @@
 
 (defun interpret-script (script object)
   (when script 
-    (let ((command (first script))
-          (arg (second script)))
-      (cond ((eq 'program command) (iterate-json-array object #'(lambda (item) (interpret-script arg item)))) ;; cdr down complete object
-            ((eq 'foreach command) (let ((field (second script))                                              ;; cdr down field of object
-                                         (subscript (third script)))
-                                     (iterate-json-array (slot-value object field) #'(lambda (item) (interpret-script subscript item)))))
-            ((eq 'textblock command) (iterate-script (cdr script) #'(lambda (subscript) (interpret-textblock subscript object))))
+    (let ((command (first script)))
+      (cond 
+            ((eq 'program command)
+             (map-json-array object
+                             #'(lambda (sub-object)
+                                 (map-script (cdr script) #'(lambda (sub-script) (interpret-script sub-script sub-object)))))) ;; cdr down complete script
+
+            ((eq 'foreach command) (let ((field-name (make-field-name (second script)));; interpret sub-tree (sub-script) on object.field-name
+                                         (sub-script (third script)))
+                                     (let ((field (get-field object field-name)))
+                                       (interpret-script sub-script field))))
+
+            ((eq 'textblock command) (map-script (cdr script) #'(lambda (sub-script) (interpret-textblock sub-script object))))
+
             (t (error "illegal command"))))))
 
 (defun interpret-textblock (script object)
@@ -39,7 +46,7 @@
           (arg (second script)))
       (cond
        ((eq 'text command) (output arg))
-       ((eq 'fieldfref command) (output (slot-value object arg)))
+       ((eq 'fieldref command) (output (get-field object arg)))
        ((eq 'tosref command) (output object))
        (t (error "illegal textblock command"))))))
 
@@ -48,11 +55,11 @@
 ;;;   (when (string= "%0A" (last3chars x))
 ;;;     (format *standard-output* "~%")))
 
-(defun iterate-json-array (array-object func)
+(defun map-json-array (array-object func)
   (mapc func array-object))
 
-(defun iterate-script (script-object func)
-  (mapc func script-object))
+(defun map-script (script-list func)
+  (mapc func script-list))
 
 ;;; (defun last3chars (s)
 ;;;   (let ((len (length s)))
@@ -61,3 +68,9 @@
 ;;;       (if (= 3 len)
 ;;;           s
 ;;;         (subseq s (- len 3) len)))))
+
+;;;  (defun make-field-name (symbol)
+;;;   (intern (symbol-name symbol) "KEYWORD"))
+
+(defun get-field (json-object field-name)
+  (assoc field-name json-object))
