@@ -1,5 +1,8 @@
+;; (ql:quickload :cl-json)
+;; (ql:quickload :quri)
 (defparameter *component-as-json* "/Users/tarvydas/projects/t2py/component.json")
 (defparameter *script* "/Users/tarvydas/projects/t2py/script.lisp")
+
 
 ;; from https://riptutorial.com/common-lisp/example/19473/reading-and-writing-entire-files-to-and-from-strings
 (defun read-file (infile)
@@ -16,7 +19,8 @@
         (let ((json-input (cl-json::decode-json strm)))
           (with-open-file (fscript *script* :direction :input)
             (let ((script (read fscript)))
-              (interpret-script script json-input))))))))
+              (interpret-script script json-input)))))))
+  (values))
 
 (defun interpret-script (script object)
   (when script 
@@ -26,7 +30,7 @@
             ((eq 'foreach command) (let ((field (second script))                                              ;; cdr down field of object
                                          (subscript (third script)))
                                      (iterate-json-array (slot-value object field) #'(lambda (item) (interpret-script subscript item)))))
-            ((eq 'textblock command) (interpret-textblock arg object))
+            ((eq 'textblock command) (iterate-script (cdr script) #'(lambda (subscript) (interpret-textblock subscript object))))
             (t (error "illegal command"))))))
 
 (defun interpret-textblock (script object)
@@ -40,7 +44,20 @@
        (t (error "illegal textblock command"))))))
 
 (defun output (x)
-  (format *standard-output* "~a" x))
+  (format *standard-output* "~a" (quri::url-decode x)))
+;;;   (when (string= "%0A" (last3chars x))
+;;;     (format *standard-output* "~%")))
 
 (defun iterate-json-array (array-object func)
   (mapc func array-object))
+
+(defun iterate-script (script-object func)
+  (mapc func script-object))
+
+;;; (defun last3chars (s)
+;;;   (let ((len (length s)))
+;;;     (if (> 3 len)
+;;;         ""
+;;;       (if (= 3 len)
+;;;           s
+;;;         (subseq s (- len 3) len)))))
