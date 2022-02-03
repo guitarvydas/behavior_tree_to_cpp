@@ -27,3 +27,5 @@ rwtokens.json: rwtokenize.bash rwtokenize.ohm rwtokenize.glue rewrite.spec
 debug: component.json rwtokens.json rewrite.spec
 	./makerwscript.bash <rwtokens.json >script.lisp
 
+pydebug:
+	./pyrun.bash
