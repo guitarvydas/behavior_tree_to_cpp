@@ -1,21 +1,23 @@
-Main [tProgram @Chunk tend tEOF] = [[${tProgram} ${Chunk} ${tend} ${tEOF}]]
+Main [tProgram @Chunk tend tEOF] = [[(program\n${Chunk})]]
 
 Chunk [command] = [[${command}]]
-Foreach [tforeach name @Chunk tend] = [[${tforeach} ${name} ${Chunk} ${tend}]]
-Block [tblock @Lines tendblock] = [[${tblock} ${Lines} ${tendblock}]]
+Foreach [tforeach name @Chunk tend] = [[(foreach\n${name}\n${Chunk})\n]]
+Block [tblock @Lines tendblock] = [[(textblock\n${Lines})\n]]
 
 Program [k] = [[${k}]]
 EOF [k] = [[${k}]]
 
-Text [token] = [[${token}]]
+Text_fieldref [token] = [[(fieldref ${token})\n]]
+Text_tosref [token] = [[tosref\n]]
+Text_text [token] = [[(text "${token}")\n]]
 
 
-Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content} ]]
+Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content}]]
 
 Content [dq1 kcontent dq2 kcolon str] = [[${str}]]
 
 name [str] = [[${str}]]
-string [dq1 @cs dq2 ws] = [[${cs} ]]
+string [dq1 @cs dq2 ws] = [[${cs}]]
 dq [c] = [[${c}]]
 stringChar [c] = [[${c}]]
 comment [kss @cs eol] = [[\n]]

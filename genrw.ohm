@@ -10,9 +10,9 @@ Program = Token<"program">
 EOF = Token<"EOF">
 
 Text
-  = Token<"fieldref">
-  | Token<"tosref">
-  | Token<"text">
+  = Token<"fieldref"> -- fieldref
+  | Token<"tosref">   -- tosref
+  | Token<"text">     -- text
 
 Token <s> = "{" dq "token" dq ":" dq s dq Content? "}"
 
