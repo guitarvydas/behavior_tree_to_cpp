@@ -1,7 +1,7 @@
 Main [tProgram @Chunk tend tEOF] = [[${tProgram} ${Chunk} ${tend} ${tEOF}]]
 
 Chunk [command] = [[${command}]]
-Foreach [tforeach tname @Chunk tend] = [[${tforeach} ${name} ${Chunk} ${tend}]]
+Foreach [tforeach name @Chunk tend] = [[${tforeach} ${name} ${Chunk} ${tend}]]
 Block [tblock @Lines tendblock] = [[${tblock} ${Lines} ${tendblock}]]
 
 Program [k] = [[${k}]]
