@@ -17,7 +17,7 @@
   :[foreach @.kind
 ### 
         :[
-                  factory.registerNodeType<@.kind>("@.kind")
+                  factory.registerNodeType<@.kind>("@")
         :]
   :]foreach
 ## 
@@ -30,10 +30,10 @@
   :]
 ## 
         :[
-                        class @.kind : public SyncActionNode
+                        class @ : public SyncActionNode
                         {
                         public:
-                          @.kind(const std::string& name, const NodeConfiguration& config)
+                          @(const std::string& name, const NodeConfiguration& config)
                                 : SyncActionNode(name, config)
                           {
                           }

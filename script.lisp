@@ -16,7 +16,7 @@ kind
 (text "factory.registerNodeType%3C")
 (fieldref kind)
 (text "%3E(%22")
-(fieldref kind)
+tosref
 (text "%22)%0A")
 )
 )
@@ -29,11 +29,11 @@ kind
 )
 (textblock
 (text "class%20")
-(fieldref kind )
+tosref
 (text "%3A%20public%20SyncActionNode%0A")
 (text "%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A")
 (text "%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20public%3A%0A")
-(fieldref kind)
+tosref
 (text "(const%20std%3A%3Astring%26%20name%2C%20const%20NodeConfiguration%26%20config)%0A")
 (text "%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3A%20SyncActionNode(name%2C%20config)%0A")
 (text "%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A")
