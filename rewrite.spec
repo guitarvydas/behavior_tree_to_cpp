@@ -1,6 +1,5 @@
 :[program
 # 
-:[foreach @.component
 ## 
   :[
           #include "behaviortree_cpp_v3/bt_factory.h"
@@ -74,5 +73,4 @@
                  }
                 };
   :]
-:]foreach
 :]program

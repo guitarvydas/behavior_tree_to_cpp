@@ -1,6 +1,4 @@
 (program
-(foreach
-component
 (textblock
 (text "%0A")
 (text "%20%20%20%20%20%20%20%20%20%20%2F%2F%20file%20that%20contains%20the%20custom%20nodes%20definitions%0A")
@@ -74,6 +72,5 @@ tosref
 (textblock
 (text "%7D%0A")
 (text "%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%3B%0A")
-)
 )
 )
