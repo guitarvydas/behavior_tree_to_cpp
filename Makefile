@@ -25,5 +25,5 @@ rwtokens.json: rwtokenize.bash rwtokenize.ohm rwtokenize.glue rewrite.spec
 	./rwtokenize.bash <rewrite.spec >rwtokens.json
 
 debug: component.json rwtokens.json
-	./makerwscript.bash <rwtokens.json >rewrite.lisp
+	./makerwscript.bash <rwtokens.json >script.lisp
 

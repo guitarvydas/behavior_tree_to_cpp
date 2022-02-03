@@ -1,5 +1,5 @@
 (defparameter *component-as-json* "/Users/tarvydas/projects/t2py/component.json")
-(defparameter *script* "/Users/tarvydas/projects/t2py/rewrite.lisp")
+(defparameter *script* "/Users/tarvydas/projects/t2py/script.lisp")
 
 ;; from https://riptutorial.com/common-lisp/example/19473/reading-and-writing-entire-files-to-and-from-strings
 (defun read-file (infile)
