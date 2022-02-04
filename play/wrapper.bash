@@ -10,5 +10,6 @@ mkfifo $outputfromchild
 
 $childprogram 3</dev/fd/3 4>&4 &
 childpid=$!
+wait $childpid
 echo 'done' 1>&5
 rm -f $outputfromchild
