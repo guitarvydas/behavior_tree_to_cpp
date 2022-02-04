@@ -14,8 +14,11 @@ inA = 3
 inB = 4
 
 lots=32767
-stringA = os.read (inA, lots)
-stringB = os.read (inB, lots)
+stringA = os.read (inA, lots).decode ('utf-8')
+stringB = os.read (inB, lots).decode ('utf-8')
 
-os.write(5, stringA)
-os.write(5, stringB)
+a = bytes(stringA, 'utf-8')
+b = bytes(stringB, 'utf-8')
+
+os.write(5, a)
+os.write(5, b)
