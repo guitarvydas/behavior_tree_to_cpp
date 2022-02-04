@@ -13,7 +13,7 @@ print ('IN join.py')
 
 inA = 3
 inB = 4
-out = os.fdopen (5, 'w')
+out = os.open (5, 'w')
 
 lots=32767
 stringA = os.read (inA, lots).decode('utf-8')
