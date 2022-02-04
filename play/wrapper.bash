@@ -8,8 +8,7 @@ childprogram=$1
 outputfromchild=duct_${RANDOM}
 mkfifo $outputfromchild
 
-$childprogram 3</dev/fd/3 4>$outputfromchild &
+$childprogram 3</dev/fd/3 4>&4 &
 childpid=$!
-cat <$outputfromchild >/dev/fd/4
 echo 'done' 1>&5
 rm -f $outputfromchild
