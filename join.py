@@ -9,15 +9,13 @@ import json
 import html
 import re
 
-print ('IN join.py')
 
 inA = 3
 inB = 4
-out = os.fdopen (5, 'w')
 
 lots=32767
-stringA = os.read (inA, lots).decode('utf-8')
-stringB = os.read (inB, lots).decode('utf-8')
+stringA = os.read (inA, lots)
+stringB = os.read (inB, lots)
 
-#print (stringA + stringB)
-out.write('fd 5')
+os.write(5, stringA)
+os.write(5, stringB)
