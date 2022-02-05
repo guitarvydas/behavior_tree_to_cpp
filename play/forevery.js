@@ -1,14 +1,16 @@
 
 function box4 (item) {
     var result = undefined;
-    var text = box5 (`factory.registerNodeType<@>("@");`);
+    var text = box5 ();
     result = box6 (item, text);
     return result;
 }
 
 function box3 (list) {
     var result = [];
-    list.forEach (item => result.push (box4 (item)) );
+    list.forEach (item => {
+        result.push (box4 (item)) 
+    });
     return result.join ('\n');
 }
 
@@ -20,7 +22,9 @@ function box2 (item) {
 
 function box1 (list) {
     var result = [];
-    list.forEach (item => result.push (box2 (item)));
+    list.forEach (item => {
+        result.push (box2 (item))
+    });
     return result.join ('\n');
 }
 
@@ -28,15 +32,45 @@ function box6 (at, text) {
     return text.replace (/@/g, at);
 }
 
-function box5 (s) {
+function box5 () {
     return `factory.registerNodeType<@>("@");`;
 }
 
+function box7 () {
+    return `
+    #include "behaviortree_cpp_v3/bt_factory.h"
 
-//var argv = require('yargs/yargs')(process.argv.slice(2)).argv;
-var argv = {json:`[{"z":4,"inputs":[\"a\",\"b\",\"c\"],"y":5},{"z":6,"inputs":[\"d\",\"e\",\"f\"],"y":7}]`};
-console.error (argv);
-console.error (argv.json);
-var components_instance = JSON.parse (argv.json);
-var result = box1 (components_instance);
-console.error (result);
+// file that contains the custom nodes definitions
+#include "dummy_nodes.h"
+
+int main()
+{
+  using namespace DummyNodes;
+
+  BehaviorTreeFactory factory;
+
+@
+
+  auto tree = factory.createTreeFromFile("./my_tree.xml");
+
+  tree.tickRoot();
+  return 0;
+}
+`;
+}
+
+function box8 (at, text) {
+    return text.replace (/@/g, at);
+}
+
+function box9 (list) {
+    var a = box1 (list);
+    var b = box7 ();
+    var result = box8 (a, b);
+    return result;
+}
+
+fs = require ('fs');
+var json_components = fs.readFileSync ('component.json', 'utf-8');
+var components = JSON.parse (json_components);
+console.log (box9 (components));

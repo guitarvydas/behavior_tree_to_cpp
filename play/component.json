@@ -1,0 +1,22 @@
+
+[
+{
+"kind":"sync",
+"inputs":[],
+"outputs":["text"],
+"lines":"setOutput(%22text%22%2C%20%22The%20answer%20is%2042%22%20)%3B  %C2%A0%20%C2%A0%20return%20NodeStatus%3A%3ASUCCESS%3B  "
+},
+{
+"kind":"sync",
+"inputs":["message"],
+"outputs":[],
+"lines":"Optional%3Cstd%3A%3Astring%3E%20msg%20%3D%20getInput%3Cstd%3A%3Astring%3E(%22message%22)%3B  %C2%A0%20%C2%A0%20%2F%2F%20Check%20if%20optional%20is%20valid.%20If%20not%2C%20throw%20its%20error  %C2%A0%20%C2%A0%20if%20(!msg)  %C2%A0%20%C2%A0%20%C2%A0%20%7B  %C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20throw%20BT%3A%3ARuntimeError(%22missing%20required%20input%20%5Bmessage%5D%3A%20%22%2C%C2%A0  %C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0msg.error()%20)%3B  %C2%A0%20%C2%A0%20%C2%A0%20%7D    %C2%A0%20%C2%A0%20%2F%2F%20use%20the%20method%20value()%20to%20extract%20the%20valid%20message.  %C2%A0%20%C2%A0%20std%3A%3Acout%20%3C%3C%20%22Robot%20says%3A%20%22%20%3C%3C%20msg.value()%20%3C%3C%20std%3A%3Aendl%3B  %C2%A0%20%C2%A0%20return%20NodeStatus%3A%3ASUCCESS%3B      "
+},
+{
+"kind":"sync",
+"inputs":[],
+"outputs":[],
+"lines":"Optional%3Cstd%3A%3Astring%3E%20msg%20%3D%20self.getInput%3Cstd%3A%3Astring%3E(%22message%22)%3B  %C2%A0%20%2F%2F%20Check%20if%20optional%20is%20valid.%20If%20not%2C%20throw%20its%20error  %C2%A0%20if%20(!msg)  %C2%A0%20%C2%A0%20%7B  %C2%A0%20%C2%A0%20%C2%A0%20throw%20BT%3A%3ARuntimeError(%22missing%20required%20input%20%5Bmessage%5D%3A%20%22%2C%20msg.error())%3B  %C2%A0%20%C2%A0%20%7D    %C2%A0%20%2F%2F%20use%20the%20method%20value()%20to%20extract%20the%20valid%20message.  %C2%A0%20std%3A%3Acout%20%3C%3C%20%22Robot%20says%3A%20%22%20%3C%3C%20msg.value()%20%3C%3C%20std%3A%3Aendl%3B  %C2%A0%20return%20NodeStatus%3A%3ASUCCESS%3B        "
+}
+]
+
