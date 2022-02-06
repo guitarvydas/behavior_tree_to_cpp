@@ -18,7 +18,7 @@ fb.pl out.json: tree.drawio \
 	./xmlemit.py out.json >out.xml
 	./tokenize.bash <fb.pl >tokens.json
 
-component.json: parsecomponent.bash tokens.json component.ohm component.glue tokens.json componentsupport.js
+component.json: parsecomponent.bash tokens.json component.ohm component.glue tokens.json componentsupport.js fb.pl
 	./parsecomponent.bash <tokens.json >component.json
 
 rwtokens.json: rwtokenize.bash rwtokenize.ohm rwtokenize.glue rewrite.spec

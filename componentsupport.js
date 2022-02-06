@@ -1,5 +1,5 @@
 function formatName (s) {
-    return s.trim ().replace (/%22/g,"");
+    return s.trim ().replace (/%22/g,"\"");
 }
 
 exports.formatInputs = function (s) {

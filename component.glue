@@ -7,8 +7,8 @@ AsyncKind [content] = [["kind":"async",\n"name":"${support.namify (content)}",]]
 
 SyncKind [content] = [["kind":"sync",\n"name":"${support.namify (content)}",]]
 
-Inputs [content] = [["inputs":"${support.formatInputs (content)}",]]
-Outputs [content] = [["outputs":"${support.formatOutputs (content)}",]]
+Inputs [content] = [["inputs":[${support.formatInputs (content)}],]]
+Outputs [content] = [["outputs":[${support.formatOutputs (content)}],]]
 Lines [ktick @lines] = [["lines":"${lines}"]]
 
 Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content}]]

@@ -1,4 +1,7 @@
 t2py
+## stack
+### multiple inputs/outputs
+
 ## regions:
 ### rewrite region
 :[rewrite
@@ -31,4 +34,5 @@ t2py
 @.lines refers to the lines of field of the object ; @.lines is a list
 
 @ is scoped by the region, a new @ begins in the region and lasts until the end of the region
+
 
