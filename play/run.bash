@@ -9,4 +9,6 @@
 #node inputs.js --json='["A", "B", "C"]'
 #node selectinputs.js --json='{"y":4,"inputs":[1, 2, 3],"z":5}'
 
-node all.js
+#node all.js
+node ops.js
+
