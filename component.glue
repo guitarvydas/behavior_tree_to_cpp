@@ -11,7 +11,7 @@ Inputs [content] = [["inputs":[${support.formatInputs (content)}],]]
 Outputs [content] = [["outputs":[${support.formatOutputs (content)}],]]
 Lines [ktick @lines] = [["lines":"${lines}"]]
 
-LineToken [content] = [[${content}\n]]
+LineToken [content] = [[${content}]]
 Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content}]]
 
 Content [dq1 kcontent dq2 kcolon str] = [[${str} ]]

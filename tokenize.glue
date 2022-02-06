@@ -6,8 +6,8 @@ Inputs  [kinputs kcolon @strings eol] = [[{"token":"inputs", "content":"${suppor
 Outputs [koutputs kcolon @strings eol] = [[{"token":"outputs", "content":"${support.encode (strings)}"},\n]]
 Tick [ktick kcolon eol] = [[{"token":"tick"}\n]]
 
-line [@cs eol]  = [[{"token":"line", "content":"${support.encode (cs)}"},\n]]
-lineAtEOF [@cs] = [[{"token":"line", "content":"${support.encode (cs)}"},\n]]
+line [@cs eol]  = [[{"token":"line", "content":"${support.encode (cs + '\n')}"},\n]]
+lineAtEOF [@cs] = [[{"token":"line", "content":"${support.encode (cs + '\n')}"},\n]]
 
 name [nameFirst @nameRest @ws] = [[${nameFirst}${nameRest}${ws}]]
 nameFirst [c] = [[${c}]]

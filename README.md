@@ -2,6 +2,7 @@ t2py
 ## stack
 ### multiple inputs/outputs
 ### {} as last component
+### put newlines into lines, then retry play/run.bash
 
 
 ## regions:

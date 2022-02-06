@@ -110,8 +110,14 @@ function box73 (list) {
 
 function box72 (item) {
     var result = undefined;
-    result = box73 (item.outputs);
-    return result;
+    if (undefined !== item.outputs) {
+    	result = box73 (item.outputs);
+    	return result;
+    } else {
+    	console.error ('{} in components?');
+    	throw "internal error";
+    }
+
 }
 
 function box75 (at, text) {
@@ -172,12 +178,17 @@ function box160 (text, at3text) {
 function box180 (list) {
     var result = [];
     list.forEach (component => {
-        var clss = box810(component);
+	if (undefined === component.outputs) {
+	    console.error ("looks like {} is in component.json");
+	    throw "null component";
+	} else {
+            var clss = box810(component);
 	    var ports = box21 (component);
 	    var tick = box932 (component);
 	    var clssports = box150 (clss, ports);
 	    var clssportstick = box160 (clssports, tick);
 	    result.push (clssportstick);
+	}
     });
     return result.join ('\n');
 }
