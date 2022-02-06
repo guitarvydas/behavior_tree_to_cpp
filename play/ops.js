@@ -1,3 +1,7 @@
+function fjoin (a, b) {
+    return a + b;
+}
+
 function fcall (func, x, y, z) {
     return func (x, y, z);
 }
@@ -86,105 +90,82 @@ function box914 (attext) {
 }
 
 function box810 (component) {
-    var selected = select (component, "name");
-    var r = box914 (selected);
-    return r;
+    return fcall (box914, select (component, "name"));
 }
 
 ////// ports
 
 function box24 (item) {
-    var result = undefined;
-    var text = box26 ();
-    result = box25 (item, text);
-    return result;
+    return fcall (box25, item, fcall (box26));
 }
 
 function box23 (list) {
     var result = [];
     list.forEach (item => {
-        result.push (box24 (item)) 
+        result.push (fcall (box24, item)); 
     });
     return result.join ('\n');
 }
 
 function box22 (item) {
-    var result = undefined;
-    result = box23 (item.inputs);
-    return result;
+    return fcall (box23, item.inputs);
 }
 
 function box25 (at, text) {
-    return text.replace (/@/g, at);
+    return edit (text, at);
 }
 
 function box26 () {
-    return `ports.insert( BT::InputPort<std::string>("@"));`;
+    return constant (`ports.insert( BT::InputPort<std::string>("@"));`);
 }
 
 
 
 
 function box74 (item) {
-    var result = undefined;
-    var text = box76 ();
-    result = box75 (item, text);
-    return result;
+    return fcall (box75, item, fcall (box76));
 }
 
 function box73 (list) {
     var result = [];
     list.forEach (item => {
-        result.push (box74 (item)) 
+        result.push (fcall (box74, item)) 
     });
     return result.join ('\n');
 }
 
 function box72 (item) {
-    var result = undefined;
-    if (undefined !== item.outputs) {
-    	result = box73 (item.outputs);
-    	return result;
-    } else {
-    	console.error ('{} in components?');
-    	throw "internal error";
-    }
-
+    return fcall (box73, select (item, "outputs"));
 }
 
 function box75 (at, text) {
-    return text.replace (/@/g, at);
+    return edit (text, at);
 }
 
 function box76 () {
-    return `ports.insert( BT::OutputPort<std::string>("@"));`;
+    return constant (`ports.insert( BT::OutputPort<std::string>("@"));`);
 }
 
 function box50 (A, B) {
-    return A + B;
+    return fjoin (A, B);
 }
 
 function box51 (attext, text) {
-    return text.replace (/@/g, attext);
+    return edit (text, attext);
 }
 
 function box52 () {
-    return `
+    return constant (`
 static PortsList providedPorts () {
     PortsList ports;
     @
     return ports;
 }
-`;
+`);
 }
 
 function box21 (component) {
-    var input_ports = box22 (component);
-    var output_ports = box72 (component);
-    var ports = box50 (input_ports, output_ports);
-    var boilerplate = box52 ();
-    var portdef = box51 (ports, boilerplate); 
-    return portdef;
+    return fcall (box51, fcall (box50, fcall (box22, component), fcall (box72, component)), fcall (box52)); 
 }
 
 ////////// end ports
