@@ -132,7 +132,7 @@ function box51 (attext, text) {
 
 function box52 () {
     return `
-static PortsList providePorts () {
+static PortsList providedPorts () {
     PortsList ports;
     @
     return ports;
