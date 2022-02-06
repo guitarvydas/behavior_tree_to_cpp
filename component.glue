@@ -3,23 +3,24 @@ Component [Kind Inputs Outputs Lines] = [[{\n${Kind}\n${Inputs}\n${Outputs}\n${L
 
 ComponentKind [k] = [[${k}]]
 
-AsyncKind [content] = [["kind":"async",]]
+AsyncKind [content] = [["kind":"async",\n"name":"${support.namify (content)}",]]
 
-SyncKind [content] = [["kind":"sync",]]
+SyncKind [content] = [["kind":"sync",\n"name":"${support.namify (content)}",]]
 
-Inputs [content] = [["inputs":"${support.formatInputs (content)}",]]
-Outputs [content] = [["outputs":"${support.formatOutputs (content)}",]]
+Inputs [content] = [["inputs":[${support.formatInputs (content)}],]]
+Outputs [content] = [["outputs":[${support.formatOutputs (content)}],]]
 Lines [ktick @lines] = [["lines":"${lines}"]]
 
-Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content} ]]
+LineToken [content] = [[${content}]]
+Token [klbr dq1 ktoken dq2 kcolon dq3 kkeyword dq4 @Content krbr] = [[${Content}]]
 
-Content [dq1 kcontent dq2 kcolon str] = [[${str}]]
+Content [dq1 kcontent dq2 kcolon str] = [[${str} ]]
 
 
 
 
-name [str] = [[${str}]]
-string [dq1 @cs dq2 ws] = [[${cs} ]]
+name [str] = [[${str} ]]
+string [dq1 @cs dq2 ws] = [[${cs}]]
 dq [c] = [[${c}]]
 stringChar [c] = [[${c}]]
 comment [kss @cs eol] = [[\n]]

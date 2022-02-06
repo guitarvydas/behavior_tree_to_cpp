@@ -11,8 +11,9 @@ SyncKind = Token<"sync">
 
 Inputs = Token<"inputs">
 Outputs = Token<"outputs">
-Lines = Token<"tick"> Token<"line">+
+Lines = Token<"tick"> LineToken+
 
+LineToken = Token<"line">
 Token <s> = "{" dq "token" dq ":" dq s dq Content? "}"
 
 Content = dq "content" dq ":" string
