@@ -1,18 +1,37 @@
+function fcall (func, x, y, z) {
+    return func (x, y, z);
+}
+
 function constant (x, y) {
     return x;
 }
 
-function edit (text, re, replacement) {
+function _edit (text, re, replacement) {
     return text.replace (re, replacement);
 }
 
+function edit (text, replacement) {
+    return _edit (text, /@/g, replacement);
+}
+
 function edit1 (text, replacement) {
-    return edit (text, /@1/g, replacement);
+    return _edit (text, /@1/g, replacement);
+}
+
+function edit2 (text, replacement) {
+    return _edit (text, /@2/g, replacement);
+}
+
+function edit3 (text, replacement) {
+    return _edit (text, /@3/g, replacement);
 }
 
 function select (obj, field) {
     return obj [field];
 }
+
+
+
 //// main 
 
 function box7 () {
@@ -63,9 +82,7 @@ function box916 (attext, text) {
 }
 
 function box914 (attext) {
-    var konst = box915 ();
-    var edit = box916 (attext, konst);
-    return edit;
+    return fcall (box916, attext, fcall (box915));
 }
 
 function box810 (component) {
@@ -184,17 +201,17 @@ function box932 (item) {
 
 ///////// for each component
 function box150 (text, at2text) {
-    return text.replace (/@2/g, at2text);
+    return edit2 (text, at2text);
 }
 
 function box160 (text, at3text) {
-    return text.replace (/@3/g, at3text);
+    return edit3 (text, at3text);
 }
 
 function box180 (list) {
     var result = [];
     list.forEach (component => {
-	if (undefined === component.outputs) {
+	if (undefined === component || undefined === component.outputs) {
 	    console.error ("looks like {} is in component.json");
 	    throw "null component";
 	} else {
