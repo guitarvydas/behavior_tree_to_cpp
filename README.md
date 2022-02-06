@@ -1,6 +1,8 @@
 t2py
 ## stack
 ### multiple inputs/outputs
+### {} as last component
+
 
 ## regions:
 ### rewrite region

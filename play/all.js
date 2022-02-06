@@ -31,7 +31,7 @@ function box915 () {
 class @1 : public SyncActionNode
 {
 public:
-  @1(konst std::string& name, konst NodeConfiguration& config)
+  @1(const std::string& name, const NodeConfiguration& config)
     : SyncActionNode(name, config)
   {
   }
@@ -44,13 +44,19 @@ public:
 }
 
 function box916 (attext, text) {
-    return text.replace (/@/g, attext)
+    return text.replace (/@1/g, attext)
 }
 
 function box914 (attext) {
     var konst = box915 ();
     var edit = box916 (attext, konst);
     return edit;
+}
+
+function box810 (component) {
+    var selected = component.name;
+    var r = box914 (selected);
+    return r;
 }
 
 ////// ports
@@ -193,20 +199,24 @@ function box160 (text, at3text) {
     return text.replace (/@3/g, at3text);
 }
 
-function box180 (component) {
-    var clss = box914(component);
-    var ports = box21 (component);
-    var tick = box932 (component);
-    var clssports = box150 (clss, ports);
-    var clssportstick = box160 (clssports, tick);
-    return clssportstick;
+function box180 (list) {
+    var result = [];
+    list.forEach (component => {
+        var clss = box810(component);
+	    var ports = box21 (component);
+	    var tick = box932 (component);
+	    var clssports = box150 (clss, ports);
+	    var clssportstick = box160 (clssports, tick);
+	    result.push (clssportstick);
+    });
+    return result.join ('\n');
 }
 ///////// end for each component
 
 
 //////// top
-function box170 (A, B) {
-    return A + B;
+function box170 (text, attext) {
+    return text.replace (/@/g, attext);
 }
 
 
