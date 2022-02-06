@@ -10,3 +10,6 @@ exports.formatOutputs = function (s) {
     return formatName (s);
 }
 
+exports.namify = function (s) {
+    return formatName (s);
+}
