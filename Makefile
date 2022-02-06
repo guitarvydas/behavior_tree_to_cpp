@@ -29,3 +29,8 @@ debug: component.json rwtokens.json rewrite.spec
 
 pydebug:
 	./pyrun.bash
+
+clean:
+	rm -f *~
+	rm -f _*
+

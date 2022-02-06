@@ -153,38 +153,8 @@ function box21 (component) {
 
 
 ////////// tick
-function box936 () {
-    return `
-  // This Action writes a value into the port "text"
-  NodeStatus tick() override
-  {
-    // the output may change at each tick(). Here we keep it simple.
-    setOutput("@", "The answer is 42" );
-    return NodeStatus::SUCCESS;
-  }
-`}
-
-function box935 (attext, text) {
-    return text.replace (/@/g, attext);
-}
-
-function box934 (attext) {
-    var konst = box936 ();
-    var r = box935 (attext, konst);
-    return r;
-}
-
-function box933 (list) {
-    var r = [];
-    list.forEach (item => {
-	r.push (box934 (item));
-    });
-    return r.join ('\n');
-}
-
 function box932 (item) {
-    var selected = item.outputs;
-    var r = box933 (selected);
+    var r = decodeURIComponent (item.lines);
     return r;
 }
 
