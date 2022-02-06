@@ -2,7 +2,17 @@ function constant (x, y) {
     return x;
 }
 
+function edit (text, re, replacement) {
+    return text.replace (re, replacement);
+}
 
+function edit1 (text, replacement) {
+    return edit (text, /@1/g, replacement);
+}
+
+function select (obj, field) {
+    return obj [field];
+}
 //// main 
 
 function box7 () {
@@ -49,7 +59,7 @@ public:
 }
 
 function box916 (attext, text) {
-    return text.replace (/@1/g, attext)
+    return edit1 (text, attext);
 }
 
 function box914 (attext) {
@@ -59,7 +69,7 @@ function box914 (attext) {
 }
 
 function box810 (component) {
-    var selected = component.name;
+    var selected = select (component, "name");
     var r = box914 (selected);
     return r;
 }
