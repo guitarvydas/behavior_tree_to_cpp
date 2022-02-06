@@ -160,7 +160,8 @@ function box21 (component) {
 
 ////////// tick
 function box932 (item) {
-    var r = decodeURIComponent (item.lines);
+    var remove_nbsp = item.lines.replace (/ /g," ");
+    var r = decodeURIComponent (remove_nbsp);
     return r;
 }
 
