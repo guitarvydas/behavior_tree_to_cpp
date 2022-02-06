@@ -116,6 +116,24 @@ function box76 () {
     return `ports.insert( BT::OutputPort<std::string>("@"));`;
 }
 
+function box50 (A, B) {
+    return A + B;
+}
+
+function box51 (attext, text) {
+    return text.replace (/@/g, attext);
+}
+
+function box52 () {
+    return `
+static PortsList providePorts () {
+    PortsList ports;
+    @
+    return ports;
+}
+`;
+}
+
 function box21 (component) {
     var input_ports = box22 (component);
     var output_ports = box72 (component);
