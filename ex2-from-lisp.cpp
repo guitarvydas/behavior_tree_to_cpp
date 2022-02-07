@@ -29,6 +29,7 @@ public:
 static PortsList providedPorts () {
     PortsList ports;
     ports.insert( BT::OutputPort<std::string>("text"));
+
     return ports;
 }
 
@@ -56,6 +57,7 @@ public:
 static PortsList providedPorts () {
     PortsList ports;
     ports.insert( BT::InputPort<std::string>("message"));
+
     return ports;
 }
 
@@ -119,4 +121,5 @@ static PortsList providedPorts () {
 
 };
 
+NIL
 
