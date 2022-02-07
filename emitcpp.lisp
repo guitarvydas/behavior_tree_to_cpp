@@ -59,9 +59,12 @@
 (defun join-strings-with-newlines (slist)
   ;; slist is a list of strings (or NIL)
   ;; return one string, concatenate all strings with newlines in between
-  (if slist
-    (format nil "~a~%" (car slist) (join-strings-with-newlines (cdr slist)))
-    ""))
+  (if (null slist)
+      ""
+    (let ((strings (mapcar #'(lambda (s)
+                               (format nil "~a~%" s))
+                           slist)))
+      (format nil "~{~a~}" strings))))
 
 
 ;;//// main 
@@ -79,13 +82,13 @@ int main()
 
   BehaviorTreeFactory factory;
 
-@
-
   auto tree = factory.createTreeFromFile(\"./my_tree.xml\");
 
   tree.tickRoot();
   return 0;
 }
+
+@
 "))
 
 
@@ -106,7 +109,6 @@ public:
 
 @3
 };
-}
 "))
 
 (defun box916 (attext text)
@@ -124,7 +126,8 @@ public:
   (box25 item (box26)))
 
 (defun box23 (list)
-  (join-strings-with-newlines (mapcar #'(lambda (item) (box24 item)) list)))
+  (let ((result-list (mapcar #'(lambda (item) (box24 item)) list)))
+    (join-strings-with-newlines result-list)))
 
 (defun box22 (item)
   (box23 (select item "inputs")))
@@ -142,7 +145,9 @@ public:
   (box75 item (box76)))
 
 (defun box73 (list)
-  (join-strings-with-newlines (mapcar #'(lambda (item) (box74 item)) list)))
+  (let ((result-list (mapcar #'(lambda (item) (box74 item)) list)))
+    (join-strings-with-newlines result-list)))
+
 
 (defun box72 (item)
   (box73 (select item "outputs")))
@@ -188,6 +193,23 @@ static PortsList providedPorts () {
   (decodeURIComponent
 	 (remove_nbsp (select item "lines"))))
 
+
+(defun box701 ()
+  (constant "
+  NodeStatus tick() override
+  {
+    @
+  }
+"))
+
+(defun box700 (repl text)
+  (edit text repl))
+
+(defun box600 (component)
+  (let ((lines (box932 component)))
+    (let ((text (box701)))
+      (box700 lines text))))
+
 ;;////////// end tick
 
 ;;///////// for each component
@@ -198,17 +220,17 @@ static PortsList providedPorts () {
   (edit3 text at3text))
 
 (defun box180 (list)
-  (when list
-    (let ((component (car list)))
-      (when component
-        (let ((clssports (box150
-                          (box810 component)
-                          (box21 component))))
-          (let ((clssportstick (box160
-                                clssports
-                                (box932 component))))
-            (join-strings-with-newlines (list clssportstick
-                                              (box180 (cdr list))))))))))
+  (let ((percomponentstrings (mapcar #'(lambda (component)
+                                         (when component
+                                           (let ((clssports (box150
+                                                             (box810 component)
+                                                             (box21 component))))
+                                             (let ((clssportstick (box160
+                                                                   clssports
+                                                                   (box600 component))))
+                                               clssportstick))))
+				     list)))
+    (join-strings-with-newlines percomponentstrings)))               
 ;;///////// end for each component
 
 
@@ -223,4 +245,5 @@ static PortsList providedPorts () {
       (let ((string-main (box7)))
         (let ((string-instances (box180 components)))
           (let ((string-joined (box170 string-main string-instances)))
-            (format *standard-output* "~s" string-joined))))))))
+            (format *standard-output* "~a" string-joined)
+	    (values))))))))

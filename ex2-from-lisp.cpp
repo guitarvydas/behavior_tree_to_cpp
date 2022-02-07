@@ -10,6 +10,12 @@ int main()
 
   BehaviorTreeFactory factory;
 
+  auto tree = factory.createTreeFromFile("./my_tree.xml");
+
+  tree.tickRoot();
+  return 0;
+}
+
 
 class ThinkWhatToSay : public SyncActionNode
 {
@@ -23,13 +29,19 @@ public:
 static PortsList providedPorts () {
     PortsList ports;
     ports.insert( BT::OutputPort<std::string>("text"));
+
     return ports;
 }
 
 
-setOutput("text", "The answer is 42" );
+
+  NodeStatus tick() override
+  {
+    setOutput("text", "The answer is 42" );
      return NodeStatus::SUCCESS;
  
+  }
+
 };
 
 
@@ -45,11 +57,15 @@ public:
 static PortsList providedPorts () {
     PortsList ports;
     ports.insert( BT::InputPort<std::string>("message"));
+
     return ports;
 }
 
 
-Optional<std::string> msg = getInput<std::string>("message");
+
+  NodeStatus tick() override
+  {
+    Optional<std::string> msg = getInput<std::string>("message");
      // Check if optional is valid. If not, throw its error
      if (!msg)
        {
@@ -63,6 +79,8 @@ Optional<std::string> msg = getInput<std::string>("message");
  
  
  
+  }
+
 };
 
 
@@ -82,7 +100,10 @@ static PortsList providedPorts () {
 }
 
 
-Optional<std::string> msg = self.getInput<std::string>("message");
+
+  NodeStatus tick() override
+  {
+    Optional<std::string> msg = self.getInput<std::string>("message");
    // Check if optional is valid. If not, throw its error
    if (!msg)
      {
@@ -96,12 +117,9 @@ Optional<std::string> msg = self.getInput<std::string>("message");
  
  
  
+  }
+
 };
 
-
-  auto tree = factory.createTreeFromFile("./my_tree.xml");
-
-  tree.tickRoot();
-  return 0;
-}
+NIL
 
