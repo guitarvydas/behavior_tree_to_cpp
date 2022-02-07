@@ -80,6 +80,7 @@ t2py
 - all outputs to pipe
 - /dev/fd/3,4,5, ... 
 	- avoid 0, 1, 2 (stdin, stdout, stderr)
+- future: use sockets instead of pipes
 ## Basic Operations
 - join
 - call
