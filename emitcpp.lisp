@@ -1,9 +1,11 @@
-;; (ql:quickload :alexandria)
-;; (ql:quickload :cl-ppcre)
-;; (ql:quickload :cl-json)
-;; (ql:quickload :quri)
+#+nil(progn
+  (ql:quickload :alexandria)
+  (ql:quickload :cl-ppcre)
+  (ql:quickload :cl-json)
+  (ql:quickload :quri)
+  )
 
-;; cl-json conversions:
+;; Cl-json conversions:
 ;; esp. JSON array -> lisp alist
 ;;      JSON object -> lisp alist
 ;;      key -> lisp keyword (symol interned in "KEYWORD" namespace)
@@ -14,48 +16,52 @@
 (defun fjoin (a b)
   (concatenate 'string a b))
 
-(defun xcall (func &optional x y z)
-  (funcall func x y z))
+;; (defun xcall (func &optional x y z)
+;;   (funcall func x y z))
 
-(defun fcall (func &optional x y z)
-  (funcall func x y z))
+;; (defun fcall (func &optional x y z)
+;;   (cond ((and (boundp 'x) (boundp 'y) (boundp 'z)) (funcall func x y z))
+;;         ((and (boundp 'x) (boundp 'y)) (funcall func x y))
+;;         ((and (boundp 'x)) (funcall func x))
+;;         (t (funcall func))))
 
 (defun constant (x)
   x)
 
-(defun _edit (text, re, replacement)
-  (cl-ppcre::regex-replace-all text re replacement))
+(defun _edit (text re replacement)
+  (cl-ppcre::regex-replace-all re text replacement :preserve-case t))
 
-(defun edit (text, replacement)
+(defun edit (text replacement)
   ;; replace /@/g with replacement
   (_edit text "@" replacement))
 
-(defun edit1 (text, replacement)
+(defun edit1 (text replacement)
   ;; replace /@1/g with replacement
-  (_edit text "@a" replacement))
+  (_edit text "@1" replacement))
 
-(defun edit2 (text, replacement)
+(defun edit2 (text replacement)
   ;; replace /@2/g with replacement
   (_edit text "@2" replacement))
 
-(defun edit3 (text, replacement)
+(defun edit3 (text replacement)
   ;; replace /@3/g with replacement
   (_edit text "@3" replacement))
 
 (defun select (obj field-as-string)
   ;; obj is a JSON style object as produced by cl-json (i.e. an alist)
-  (let ((field (intern field-as-string "KEYWORD")))
+  (let ((field (intern (string-upcase field-as-string) "KEYWORD")))
     (let ((pair (assoc field obj)))
       (if pair
 	  (cdr pair)
-	  nil))))
+	  (assert nil)))))
 
 
 (defun join-strings-with-newlines (slist)
   ;; slist is a list of strings (or NIL)
   ;; return one string, concatenate all strings with newlines in between
-  (when slist
-    (format "~s~%" (car slist) (join-strings-with-newlines (cdr slist)))))
+  (if slist
+    (format nil "~s~%" (car slist) (join-strings-with-newlines (cdr slist)))
+    ""))
 
 
 ;;//// main 
@@ -107,21 +113,21 @@ public:
   (edit1 text attext))
 
 (defun box914 (attext)
-  (fcall #'box916 attext (fcall #'box915)))
+  (box916 attext (box915)))
 
 (defun box810 (component)
-  (fcall #'box914 (select component "name")))
+  (box914 (select component "name")))
 
 ;;////// ports
 
 (defun box24 (item)
-  (fcall #'box25 item (fcall #'box26)))
+  (box25 item (box26)))
 
 (defun box23 (list)
-  (join-strings-with-newlines (mapcar #'(lambda (item) (fcall #'box24 item)) list)))
+  (join-strings-with-newlines (mapcar #'(lambda (item) (box24 item)) list)))
 
 (defun box22 (item)
-  (fcall #'box23 (select item "inputs")))
+  (box23 (select item "inputs")))
 
 (defun box25 (at text)
   (edit text at))
@@ -133,13 +139,13 @@ public:
 
 
 (defun box74 (item)
-  (fcall #'box75 item (fcall #'box76)))
+  (box75 item (box76)))
 
 (defun box73 (list)
-  (join-strings-with-newlines (mapcar #'(lambda (item) (fcall #'box74 item)) list)))
+  (join-strings-with-newlines (mapcar #'(lambda (item) (box74 item)) list)))
 
 (defun box72 (item)
-  (fcall #'box73 (select item "outputs")))
+  (box73 (select item "outputs")))
 
 (defun box75 (at text)
   (edit text at))
@@ -163,11 +169,10 @@ static PortsList providedPorts () {
 "))
 
 (defun box21 (component)
-    (fcall 
-     #'box51 
-     (fcall #'box50 (fcall #'box22 component))
-     (fcall #'box72 component)
-     (fcall #'box52)))
+    (box51 
+     (box50 (box22 component)
+            (box72 component))
+     (box52)))
 
 ;;////////// end ports
 
@@ -180,8 +185,8 @@ static PortsList providedPorts () {
   (quri::url-decode s))
 
 (defun box932 (item)
-  (xcall #'decodeURIComponent
-	 (xcall #'remove_nbsp (select item "lines"))))
+  (decodeURIComponent
+	 (remove_nbsp (select item "lines"))))
 
 ;;////////// end tick
 
@@ -195,13 +200,15 @@ static PortsList providedPorts () {
 (defun box180 (list)
   (when list
     (let ((component (car list)))
-      (let ((classports (fcall #'box150
-			       (fcall #'box810 component)
-			       (fcall box21 component))))
-	(let ((clssportstick (fcall #'box160
-				    clssports
-				    (fcall #'box932 component))))
-	  (join-strings-with-newlines clssportstick (box180 (cdr list))))))))
+      (when component
+        (let ((clssports (box150
+                          (box810 component)
+                          (box21 component))))
+          (let ((clssportstick (box160
+                                clssports
+                                (box932 component))))
+            (join-strings-with-newlines (list clssportstick
+                                              (box180 (cdr list))))))))))
 ;;///////// end for each component
 
 
@@ -210,10 +217,10 @@ static PortsList providedPorts () {
   (edit text attext))
 
 (defun main ()
-  (with-open-file (f "component.json" :direction :input)
-    (let ((json-components (alexandria:read-file-string "component.json")))
-      (let ((components (cl-json:decode-json json-components)))
-	(let ((string-main (fcall #'box7 components)))
-	  (let ((string-instances (fcall #'box180 components)))
-	    (let ((string-joined (fcall #'box170 string-main string-instances)))
-	      (format *standard-output* "~s" string-joined))))))))
+  (let ((json-components (alexandria:read-file-into-string (asdf:system-relative-pathname :emitcpp "component.json"))))
+    (with-input-from-string (strm json-components)
+    (let ((components (cl-json:decode-json strm)))
+      (let ((string-main (box7)))
+        (let ((string-instances (box180 components)))
+          (let ((string-joined (box170 string-main string-instances)))
+            (format *standard-output* "~s" string-joined))))))))

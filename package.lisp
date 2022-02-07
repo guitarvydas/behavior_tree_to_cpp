@@ -1,0 +1,2 @@
+(defpackage emitcpp
+  (:use :cl))
