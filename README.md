@@ -1,5 +1,3 @@
-t2py
-
 # Overview
 - experiment for converting diagram->JSON->C++
 - using https://www.behaviortree.dev/tutorial_02_basic_ports/ as the target
