@@ -15,7 +15,7 @@ fb.pl out.json out.xml: tree.drawio diagram-to-factbase.bash connected.pl kind.p
 component.json: parsecomponent.bash tokens.json component.ohm component.glue tokens.json componentsupport.js fb.pl
 	./parsecomponent.bash <tokens.json >component.json
 
-ex2.cpp : component.json
+ex2.cpp : component.json emitcpp.js
 	node emitcpp.js --components=component.json >ex2.cpp
 
 clean:

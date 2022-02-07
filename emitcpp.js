@@ -55,13 +55,13 @@ int main()
 
   BehaviorTreeFactory factory;
 
-@
-
   auto tree = factory.createTreeFromFile("./my_tree.xml");
 
   tree.tickRoot();
   return 0;
 }
+
+@
 `,null);
 }
 
@@ -186,6 +186,24 @@ function box932 (item) {
     return xcall (decodeURIComponent, xcall (remove_nbsp, select (item, "lines")));
 }
 
+function box701 () {
+    return `
+  NodeStatus tick() override
+  {
+    @
+  }
+`}
+
+function box700 (replacement, text) {
+    return edit (text, replacement);
+}
+
+function box600 (component) {
+    var lines = fcall (box932, component);
+    var text = fcall (box701);
+    return fcall (box700, lines, text);
+}
+
 ////////// end tick
 
 ///////// for each component
@@ -210,7 +228,7 @@ function box180 (list) {
 				   fcall (box21, component));
 	    var clssportstick = fcall (box160, 
 				       clssports, 
-				       fcall (box932, component));
+				       fcall (box600, component));
 	    result.push (clssportstick);
 	}
     });

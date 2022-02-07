@@ -60,7 +60,7 @@
   ;; slist is a list of strings (or NIL)
   ;; return one string, concatenate all strings with newlines in between
   (if slist
-    (format nil "~s~%" (car slist) (join-strings-with-newlines (cdr slist)))
+    (format nil "~a~%" (car slist) (join-strings-with-newlines (cdr slist)))
     ""))
 
 
