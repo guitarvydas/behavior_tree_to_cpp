@@ -283,8 +283,8 @@ diagram_fact(value, cell_20, "message=&quot;{the_answer}&quot;").
 diagram_fact(value, cell_21, "message = &quot;Start thinking...&quot;").
 diagram_fact(value, cell_22, "&lt;div&gt;&lt;div&gt;&amp;lt;root main_tree_to_execute = &quot;MainTree&quot; &amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;BehaviorTree ID=&quot;MainTree&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;Sequence name=&quot;root_sequence&quot;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;start thinking...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;ThinkWhatToSay&amp;nbsp; &amp;nbsp;text=&quot;{the_answer}&quot;/&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething&amp;nbsp; &amp;nbsp; &amp;nbsp;message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;SaySomething2 works too...&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;SaySomething2&amp;nbsp; &amp;nbsp; message=&quot;{the_answer}&quot; /&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;/Sequence&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;/BehaviorTree&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/root&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;").
 diagram_fact(value, cell_23, "&lt;span&gt;sync :&amp;nbsp; ThinkWhatToSay&lt;br&gt;inputs :&lt;br&gt;outputs : &quot;text&quot;&lt;br&gt;tick:&lt;br&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; // the output may change at each tick(). Here we keep it simple.&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/span&gt;").
-diagram_fact(value, cell_24, "&lt;div&gt;&lt;div&gt;sync : SaySomething&lt;/div&gt;&lt;div&gt;inputs: &quot;message&quot;&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;msg.error() );&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
-diagram_fact(value, cell_25, "&lt;div&gt;sync : SaySomethingSimple&lt;/div&gt;&lt;div&gt;inputs:&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = self.getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;, msg.error());&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_24, "&lt;div&gt;&lt;div&gt;&lt;div&gt;sync : SaySomething&lt;/div&gt;&lt;div&gt;inputs: &quot;message&quot;&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;msg.error() );&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_25, "&lt;div&gt;&lt;div&gt;sync : SaySomethingSimple&lt;/div&gt;&lt;div&gt;inputs:&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = self.getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;, msg.error());&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
 diagram_fact(value, cell_26, "class ThinkWhatToSay : public SyncActionNode&#10;{&#10;public:&#10;  ThinkWhatToSay(const std::string&amp; name, const NodeConfiguration&amp; config)&#10;    : SyncActionNode(name, config)&#10;  {&#10;  }&#10;&#10;&#10;  static PortsList providedPorts()&#10;  {&#10;    return { OutputPort&lt;std::string&gt;(&quot;text&quot;) };&#10;  }&#10;&#10;&#10;  // This Action writes a value into the port &quot;text&quot;&#10;  NodeStatus tick() override&#10;  {&#10;    // the output may change at each tick(). Here we keep it simple.&#10;    setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&#10;    return NodeStatus::SUCCESS;&#10;  }&#10;};").
 diagram_fact(value, cell_27, "&lt;div&gt;// SyncActionNode (synchronous action) with an input port.&lt;/div&gt;&lt;div&gt;class SaySomething : public SyncActionNode&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;public:&lt;/div&gt;&lt;div&gt;&amp;nbsp; // If your Node has ports, you must use this constructor signature&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; SaySomething(const std::string&amp;amp; name, const NodeConfiguration&amp;amp; config)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; : SyncActionNode(name, config)&lt;/div&gt;&lt;div&gt;&amp;nbsp; { }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // It is mandatory to define this static method.&lt;/div&gt;&lt;div&gt;&amp;nbsp; static PortsList providedPorts()&lt;/div&gt;&lt;div&gt;&amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // This action has a single input port called &quot;message&quot;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Any port must have a name. The type is optional.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return { InputPort&amp;lt;std::string&amp;gt;(&quot;message&quot;) };&lt;/div&gt;&lt;div&gt;&amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // As usual, you must override the virtual function tick()&lt;/div&gt;&lt;div&gt;&amp;nbsp; NodeStatus tick() override&lt;/div&gt;&lt;div&gt;&amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;msg.error() );&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;div&gt;&amp;nbsp; }&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
 diagram_fact(value, cell_28, "&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;#include &quot;behaviortree_cpp_v3/bt_factory.h&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;// file that contains the custom nodes definitions&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;#include &quot;dummy_nodes.h&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;int main()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; using namespace DummyNodes;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; BehaviorTreeFactory factory;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; factory.registerNodeType&amp;lt;SaySomething&amp;gt;(&quot;SaySomething&quot;);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; factory.registerNodeType&amp;lt;ThinkWhatToSay&amp;gt;(&quot;ThinkWhatToSay&quot;);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; // SimpleActionNodes can not define their own method providedPorts().&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; // We should pass a PortsList explicitly if we want the Action to&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; // be able to use getInput() or setOutput();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; PortsList say_something_ports = { InputPort&amp;lt;std::string&amp;gt;(&quot;message&quot;) };&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; factory.registerSimpleAction(&quot;SaySomething2&quot;, SaySomethingSimple,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;say_something_ports );&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; auto tree = factory.createTreeFromFile(&quot;./my_tree.xml&quot;);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; tree.tickRoot();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; /* Expected output:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: start thinking...&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: The answer is 42&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: SaySomething2 works too...&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Robot says: The answer is 42&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; */&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;&amp;nbsp; return 0;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13.6px&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
@@ -367,13 +367,13 @@ diagram_fact(x, cell_18, 250).
 diagram_fact(x, cell_19, 450).
 diagram_fact(x, cell_20, 877.5).
 diagram_fact(x, cell_21, 25).
-diagram_fact(x, cell_22, 120).
-diagram_fact(x, cell_23, 600).
-diagram_fact(x, cell_24, 560).
-diagram_fact(x, cell_25, 140).
-diagram_fact(x, cell_26, 1000).
-diagram_fact(x, cell_27, 650).
-diagram_fact(x, cell_28, 150).
+diagram_fact(x, cell_22, 150).
+diagram_fact(x, cell_23, 240).
+diagram_fact(x, cell_24, 20).
+diagram_fact(x, cell_25, 700).
+diagram_fact(x, cell_26, 630).
+diagram_fact(x, cell_27, 610).
+diagram_fact(x, cell_28, 90).
 diagram_fact(y, cell_11, 50).
 diagram_fact(y, cell_12, 200).
 diagram_fact(y, cell_13, 200).
@@ -385,13 +385,13 @@ diagram_fact(y, cell_18, 240).
 diagram_fact(y, cell_19, 240).
 diagram_fact(y, cell_20, 240).
 diagram_fact(y, cell_21, 235).
-diagram_fact(y, cell_22, 360).
-diagram_fact(y, cell_23, 360).
-diagram_fact(y, cell_24, 520).
-diagram_fact(y, cell_25, 570).
-diagram_fact(y, cell_26, 360).
-diagram_fact(y, cell_27, 770).
-diagram_fact(y, cell_28, 800).
+diagram_fact(y, cell_22, 880).
+diagram_fact(y, cell_23, 560).
+diagram_fact(y, cell_24, 305).
+diagram_fact(y, cell_25, 440).
+diagram_fact(y, cell_26, 860).
+diagram_fact(y, cell_27, 1240).
+diagram_fact(y, cell_28, 1105).
 treefact(connected, cell_11, cell_12).
 treefact(connected, cell_11, cell_13).
 treefact(connected, cell_11, cell_14).
@@ -429,8 +429,8 @@ treefact(str, cell_19, "message=&quot;{the_answer}&quot;").
 treefact(str, cell_20, "message=&quot;{the_answer}&quot;").
 treefact(str, cell_21, "message = &quot;Start thinking...&quot;").
 treefact(str, cell_23, "&lt;span&gt;sync :&amp;nbsp; ThinkWhatToSay&lt;br&gt;inputs :&lt;br&gt;outputs : &quot;text&quot;&lt;br&gt;tick:&lt;br&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; // the output may change at each tick(). Here we keep it simple.&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; setOutput(&quot;text&quot;, &quot;The answer is 42&quot; );&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/span&gt;").
-treefact(str, cell_24, "&lt;div&gt;&lt;div&gt;sync : SaySomething&lt;/div&gt;&lt;div&gt;inputs: &quot;message&quot;&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;msg.error() );&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
-treefact(str, cell_25, "&lt;div&gt;sync : SaySomethingSimple&lt;/div&gt;&lt;div&gt;inputs:&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = self.getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;, msg.error());&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
+treefact(str, cell_24, "&lt;div&gt;&lt;div&gt;&lt;div&gt;sync : SaySomething&lt;/div&gt;&lt;div&gt;inputs: &quot;message&quot;&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;msg.error() );&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
+treefact(str, cell_25, "&lt;div&gt;&lt;div&gt;sync : SaySomethingSimple&lt;/div&gt;&lt;div&gt;inputs:&lt;/div&gt;&lt;div&gt;outputs:&lt;/div&gt;&lt;div&gt;tick:&lt;/div&gt;&lt;div&gt;&amp;nbsp; Optional&amp;lt;std::string&amp;gt; msg = self.getInput&amp;lt;std::string&amp;gt;(&quot;message&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; // Check if optional is valid. If not, throw its error&lt;/div&gt;&lt;div&gt;&amp;nbsp; if (!msg)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; throw BT::RuntimeError(&quot;missing required input [message]: &quot;, msg.error());&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; // use the method value() to extract the valid message.&lt;/div&gt;&lt;div&gt;&amp;nbsp; std::cout &amp;lt;&amp;lt; &quot;Robot says: &quot; &amp;lt;&amp;lt; msg.value() &amp;lt;&amp;lt; std::endl;&lt;/div&gt;&lt;div&gt;&amp;nbsp; return NodeStatus::SUCCESS;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
 treefact(boundingbox_left,cell_11,440).
 treefact(boundingbox_top,cell_11,50).
 treefact(boundingbox_right,cell_11,680).
@@ -475,34 +475,34 @@ treefact(boundingbox_left,cell_21,25).
 treefact(boundingbox_top,cell_21,235).
 treefact(boundingbox_right,cell_21,175).
 treefact(boundingbox_bottom,cell_21,275).
-treefact(boundingbox_left,cell_22,120).
-treefact(boundingbox_top,cell_22,360).
-treefact(boundingbox_right,cell_22,510).
-treefact(boundingbox_bottom,cell_22,550).
-treefact(boundingbox_left,cell_23,600).
-treefact(boundingbox_top,cell_23,360).
-treefact(boundingbox_right,cell_23,990).
-treefact(boundingbox_bottom,cell_23,480).
-treefact(boundingbox_left,cell_24,560).
-treefact(boundingbox_top,cell_24,520).
-treefact(boundingbox_right,cell_24,960).
-treefact(boundingbox_bottom,cell_24,760).
-treefact(boundingbox_left,cell_25,140).
-treefact(boundingbox_top,cell_25,570).
-treefact(boundingbox_right,cell_25,530).
-treefact(boundingbox_bottom,cell_25,790).
-treefact(boundingbox_left,cell_26,1000).
-treefact(boundingbox_top,cell_26,360).
-treefact(boundingbox_right,cell_26,1435).
-treefact(boundingbox_bottom,cell_26,710).
-treefact(boundingbox_left,cell_27,650).
-treefact(boundingbox_top,cell_27,770).
-treefact(boundingbox_right,cell_27,1085).
-treefact(boundingbox_bottom,cell_27,1260).
-treefact(boundingbox_left,cell_28,150).
-treefact(boundingbox_top,cell_28,800).
-treefact(boundingbox_right,cell_28,620).
-treefact(boundingbox_bottom,cell_28,1360).
+treefact(boundingbox_left,cell_22,150).
+treefact(boundingbox_top,cell_22,880).
+treefact(boundingbox_right,cell_22,540).
+treefact(boundingbox_bottom,cell_22,1070).
+treefact(boundingbox_left,cell_23,240).
+treefact(boundingbox_top,cell_23,560).
+treefact(boundingbox_right,cell_23,630).
+treefact(boundingbox_bottom,cell_23,680).
+treefact(boundingbox_left,cell_24,20).
+treefact(boundingbox_top,cell_24,305).
+treefact(boundingbox_right,cell_24,420).
+treefact(boundingbox_bottom,cell_24,545).
+treefact(boundingbox_left,cell_25,700).
+treefact(boundingbox_top,cell_25,440).
+treefact(boundingbox_right,cell_25,1090).
+treefact(boundingbox_bottom,cell_25,660).
+treefact(boundingbox_left,cell_26,630).
+treefact(boundingbox_top,cell_26,860).
+treefact(boundingbox_right,cell_26,1065).
+treefact(boundingbox_bottom,cell_26,1210).
+treefact(boundingbox_left,cell_27,610).
+treefact(boundingbox_top,cell_27,1240).
+treefact(boundingbox_right,cell_27,1045).
+treefact(boundingbox_bottom,cell_27,1730).
+treefact(boundingbox_left,cell_28,90).
+treefact(boundingbox_top,cell_28,1105).
+treefact(boundingbox_right,cell_28,560).
+treefact(boundingbox_bottom,cell_28,1665).
 
 
 treefact(contains,cell_13,cell_17).

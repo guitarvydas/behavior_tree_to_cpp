@@ -201,8 +201,9 @@ function box180 (list) {
     var result = [];
     list.forEach (component => {
 	if (undefined === component || undefined === component.outputs) {
-	    console.error ("looks like {} is in component.json");
-	    throw "null component";
+	    // ignore null components for sake of snapshot1
+	    // console.error ("looks like {} is in component.json");
+	    // throw "null component";
 	} else {
 	    var clssports = fcall (box150, 
 				   fcall (box810, component), 
