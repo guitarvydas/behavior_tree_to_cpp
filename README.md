@@ -10,7 +10,7 @@
 - comments are white
 
 ![[tree.png]]
-[tree.png](tree.png)
+![tree.png](tree.png)
 
 - sequence nodes must contain "#sequence" as the text
 - Sync Action nodes must contain a valid C++ identifier as the name
