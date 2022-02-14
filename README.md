@@ -61,7 +61,7 @@
 ### Per Component
 
 ![[emitcpp-per component.png]]
-![per component](emitcpp-per component.png)
+![per component](emitcpp-per%20component.png)
 
 ### Class
 
