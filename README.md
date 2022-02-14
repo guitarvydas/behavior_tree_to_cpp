@@ -10,6 +10,7 @@
 - comments are white
 
 ![[tree.png]]
+[tree.png](tree.png)
 
 - sequence nodes must contain "#sequence" as the text
 - Sync Action nodes must contain a valid C++ identifier as the name
@@ -33,12 +34,16 @@
 - uses Glue to reformat pattern captures -> component.json
 - prep is used in parsecomponent.bash and in tokenize.bash
 
+[PREP github](https://github.com/guitarvydas/prep)
+
 ## XML
+
 - out.xml
 - defines Behavior Tree
 - targeted as input to Behavior Tree code
 
 ## Emitcpp.drawio
+
 - diagram of code to glue together code snippets into final C++ program
 - defines internals of emitcpp.js
 - hand-compiled for this POC (future: use d2f, d2py, etc. to compile diagram)
@@ -80,6 +85,7 @@
 	- avoid 0, 1, 2 (stdin, stdout, stderr)
 - future: use sockets instead of pipes
 ## Basic Operations
+
 - join
 - call
 - xcall
@@ -91,7 +97,9 @@
 	- edit3		/@3/g
 - select
 - *composition*
+
 ## Encoded Code Snippets
+
 - Lines of code are stored in encodeURIComponent form.
 - decodeURIComponent called as last step during emitting
 
