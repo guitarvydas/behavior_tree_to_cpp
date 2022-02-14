@@ -34,7 +34,7 @@
 - uses Glue to reformat pattern captures -> component.json
 - prep is used in parsecomponent.bash and in tokenize.bash
 
-![PREP github](https://github.com/guitarvydas/prep)
+[PREP github](https://github.com/guitarvydas/prep)
 
 ## XML
 
